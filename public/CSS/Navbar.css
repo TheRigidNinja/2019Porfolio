@@ -1,0 +1,124 @@
+nav {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 100%;
+  height: 0px;
+  z-index: 1;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+nav .row {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+nav h2 {
+  font-weight: 700;
+}
+
+nav p {
+  opacity: 0.7;
+}
+
+nav span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 30px;
+  border-radius: 4px;
+  margin: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav span:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #e91e63;
+}
+
+nav span:active i {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+nav .contactLinks {
+  margin-top: 10%;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#Filter {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, #3f51b5, #744c72);
+  opacity: .93;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#menu {
+  -webkit-transition: all cubic-bezier(0.99, -0.73, 0.55, 1.47) 0.3s;
+  transition: all cubic-bezier(0.99, -0.73, 0.55, 1.47) 0.3s;
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  left: calc(100% - 50px);
+  margin: 2% 4% 0px 0px;
+  opacity: 0.7;
+  z-index: 4;
+}
+
+#menu:hover {
+  opacity: 1;
+}
+
+nav [class*=col-md-6] {
+  border-radius: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: columns;
+          flex-flow: columns;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav [class*=col-md-6]:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+nav [class*=col-md-6]:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+/*# sourceMappingURL=Navbar.css.map */

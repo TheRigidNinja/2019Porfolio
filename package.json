@@ -1,0 +1,35 @@
+{
+  "name": "nodejs-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRigidNinja/Nodejs-Porfolio.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "Socket",
+    "JavaScript",
+    "Boostrap4",
+    "Portfolio"
+  ],
+  "author": "Brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheRigidNinja/Nodejs-Porfolio/issues"
+  },
+  "homepage": "https://github.com/TheRigidNinja/Nodejs-Porfolio#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "livereload": "^0.7.0",
+    "open": "^6.1.0",
+    "path": "^0.12.7"
+  }
+}
