@@ -1,5 +1,5 @@
 # Nodejs-Portfolio
-A  portfolio made with Node.js (express), HTM and Sass
+A  portfolio made with Node.js (express), HTML and Sass
 
 You can view it <a hreff="##">here</a>.
 ### OR
