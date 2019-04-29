@@ -1,4 +1,4 @@
-# Nodejs-Porfolio
+# Nodejs-Portfolio
 A  portfolio made with Node.js (express), HTM and Sass
 
 You can view it <a hreff="##">here</a>.
