@@ -6,4 +6,4 @@ You can view it <a hreff="##">here</a>.
 Run it locally by the following commands:
 
 <code>npm i ejs express @sendgrid/mail body-parser</code> 
-<i>You need your own api key, other than that it should work normal</i>
+<i>You need your own api key for sendgrid email, other than that it should work normal</i>
