@@ -3,9 +3,12 @@
   padding: 0px;
   text-decoration: none;
   letter-spacing: -0.85px;
+  list-style: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
-div[class*=col] {
+.Home, div[class*=col] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,21 +24,23 @@ div[class*=col] {
           justify-content: space-evenly;
 }
 
-body, .bodyContent {
+.bodyContent {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
 body {
+  background: -webkit-gradient(linear, right top, left bottom, from(#3f51b5), to(#744c72)) fixed;
   overflow: hidden;
 }
 
 .bodyContent {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  background: red;
-  background-image: linear-gradient(225deg, #3f51b5, #744c72);
+  background-image: url(../IMG/backg.svg);
+  background-repeat: no-repeeat;
+  background-size: cover;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -87,11 +92,14 @@ button:active {
 }
 
 .Home {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 60px;
   line-height: 89.6px;
   font-weight: 900;
 }
@@ -110,7 +118,11 @@ mark {
 
 .Home img {
   margin-bottom: 2px;
-  width: 8vw;
+  width: 100px;
+}
+
+.intro {
+  padding-bottom: 80px;
 }
 
 .more {
@@ -127,35 +139,110 @@ mark {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.ConnectLines {
+.ConnectLines, .ConnectLines2, .ConnectLines3 {
   position: relative;
   background: rgba(255, 255, 255, 0.2);
   width: 1px;
-  height: 100px;
+  height: 85px;
   left: 50%;
 }
 
+.aboutBtn {
+  position: absolute;
+  top: calc(100% - 180px);
+}
+
 .About {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   color: white;
+  padding: 0px;
+}
+
+.About .technical {
+  padding: 0px 10px;
+  border-radius: 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.About .Goals span {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 22px;
+  border-radius: 50%;
+  color: #33aca9;
+  font-size: 25px;
+  cursor: default;
+}
+
+.About .Goals span:hover {
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  padding: 0px 14px;
+  font-size: 30px;
+}
+
+.About .goal1 div, .About .goal2 div, .About .goal3 div, .About .goal4 div {
+  position: relative;
+  left: 35px;
+}
+
+.About .goal1 span, .About .goal2 span, .About .goal3 span, .About .goal4 span {
+  position: absolute;
+  left: 15px;
+}
+
+.About #Skils {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  display: inline-block;
+}
+
+.About #Skils span {
+  display: inline-block;
+  padding: 10px 10px;
+  margin-top: 4px;
+  border-radius: 5px;
+  background: linear-gradient(225deg, #3f51b5, #744c72);
+  cursor: default;
+}
+
+.About #Skils span:hover {
+  background: linear-gradient(225deg, #3f51b5 90%, #744c72);
+}
+
+.About .Summary,
+.About .Goals,
+.About .Development,
+.About .Learning,
+.About .Summary {
+  margin-bottom: 40px;
+}
+
+.About .Summary {
+  margin-bottom: -20px;
 }
 
 .About img {
   width: 150px;
   opacity: .6;
-  text-align: center;
 }
 
-.About img, .About h2 {
-  text-align: center;
+.About .Learning img {
+  width: 200px;
 }
 
 .About p {
   font-size: 18px;
-  line-height: 30px;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: 'Roboto', sans-serif;
+  line-height: 25.6px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .About h2 {
@@ -178,6 +265,7 @@ div[class*=col] {
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -187,5 +275,54 @@ div[class*=col] {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 800px) {
+  #Skils, .Goals, .Overview {
+    text-align: center;
+  }
+  h1 {
+    font-size: 30px !important;
+  }
+  p {
+    font-size: 14px !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  h4 {
+    font-size: 20px !important;
+  }
+  .goal1 span, .goal1 div, .goal2 span, .goal2 div, .goal3 span, .goal3 div, .goal4 span, .goal4 div {
+    position: relative !important;
+    left: 0px !important;
+  }
+  .col-sm-12, .row, .col-12 {
+    padding: 20px 10px !important;
+    margin: 0px !important;
+  }
+  .Home img {
+    width: 80px;
+  }
+  .Home .intro {
+    padding-bottom: 50px;
+  }
+  .About, .Work {
+    padding: 0px !important;
+    width: 95% !important;
+    left: 3%;
+  }
+  .Work {
+    margin-top: 60px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
 }
 /*# sourceMappingURL=Index.css.map */

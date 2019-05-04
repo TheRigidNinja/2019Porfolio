@@ -10,18 +10,17 @@
     <title>Brian Shisanya | Web Developer</title>
     <link rel="icon" href="../public/IMG/favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="../public/CSS/Index.css">
     <link rel="stylesheet" type="text/css" href="../public/CSS/Projects.css">
     <link rel="stylesheet" type="text/css" href="../public/CSS/Navbar.css">
     <link rel="stylesheet" type="text/css" href="../public/CSS/Contact.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../public/JS/ProjectDetails.js"></script>
+    <script src="../public/JS/jQuery-3-3-1.js"></script>
+    <script src="../public/JS/SlideDownPage.js"></script>
     <script src="../public/JS/index.js"></script>
-    <script src="../public/JS/ShowNavbar.js"></script>
 
 </head>
 <body>
@@ -29,28 +28,29 @@
     <nav>
         <div class="row text-light">
             <div class="col-12 contactLinks">
-                <span><i class="fab fa-github"></i></span>
-                <span><i class="fab fa-codepen"></i></span>
-                <span><i class="fab fa-linkedin"></i></span>
-                <span><i class="far fa-address-card"></i></span>
-                <span><i class="fas fa-envelope"></i></span>
+                <a href="https://github.com/TheRigidNinja?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://codepen.io/minotauro49" target="_blank"><i class="fab fa-codepen"></i></a>
+                <a href="https://docs.google.com/document/d/1h4KS1pYusOZ5Q56ovvfGQ86N0oafmKD_SWUzvI0iIoE/edit?usp=sharing" target="_blank"><i class="far fa-address-card"></i></a>
+                <a href="##"  onclick="ShowEmailPhone()"><i class="fas fa-envelope"></i> &nbsp&nbsp | &nbsp&nbsp<i class="fas fa-phone"></i></a>
             </div>
+            <!-- href="https://codepen.io/minotauro49" target="_blank" -->
 
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" onclick="Navigate('Home')">
                 <h2>Home</h2>
-                <p>Quick intro to what I'm all about</p>
+                <p>A quick intro to what I'm all about.</p>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" onclick="Navigate('About')">
                 <h2>Who I'm I?</h2>
-                <p>A detail description of what I'm, My ambitions and what i plan forwad</p>
+                <p>A detail description of what I am, My ambitions and what I plan forward.</p>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" onclick="Navigate('Work')">
                 <h2>Projects</h2>
-                <p>A place showcasing my collest creations to date</p>
+                <p>A place showcasing my coolest creations to date.</p>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" onclick="Navigate('Contact')">
                 <h2>Get In touch</h2>
-                <p>Send me a quick email to discuss more on how i could provide value for you</p>
+                <p>Send me a quick email to say Hi or to discuss more on how I could provide value for you.</p>
             </div>
         </div>
         <div id="Filter"></div>
@@ -60,67 +60,128 @@
     <div class="bodyContent">
         <div class="container"> 
             <section class="Home">
-                <img src="../public/IMG/Logo.svg">
-                <h1 class="text-light">I love to build things!</h1>
-                <p class="text-light lead">I'm Brian, a self-taught <mark>developer</mark>. I'm commited to <mark>UX</mark>, <mark>Robotics</mark>,<mark> Web and Software Development</mark>.</p>
-                <h3 class="text-light"> I believe in <mark>Entrepreneurship</mark>. I strive to make</h3>
-                <h3 class="text-light">a difference in <mark>Software and Robotics</mark>.</h3>
+                <div class="intro">
+                    <img src="../public/IMG/Logo.svg">
+                    <h1 class="text-light">I love to build things!</h1>
+                    <p class="text-light lead">I'm Brian, a self-taught <mark>developer</mark>. I'm committed to <mark>UX</mark>, <mark>Robotics</mark>,<mark> Web and Software Development</mark>.</p>
+                    <h3 class="text-light"> I believe in <mark>Entrepreneurship</mark>. I strive to make</h3>
+                    <h3 class="text-light">a difference in <mark>Software and Robotics</mark>.</h3>
 
-                <button class="text-light contact">Get In Touch</button><br>
-                <button class="text-light more">Who I'm I?</button>
-                <div class="ConnectLines"></div>
+                    <button class="text-light contact1" onclick="Navigate('LContact')">Get In Touch</button><br>
+                </div>
+
+                <div class="aboutBtn"> 
+                    <button class="text-light more" onclick="Navigate('LAbout')">Who I'm I?</button>
+                    <div class="ConnectLines"></div>
+                </div>
+
             </section>
 
-            <section class="About">
-                <div class="Summary"> 
+            <section class="About row">
+                <div class="Summary col-12"> 
                     <img src="../public/IMG/home.svg">
-                    <h2>Backround</h2>
-
+                    <h1>Backround</h1>
                     <p> 
-                        I love to tinker and build things, it has been alway like that since i can remember, In fact my  favourite toy when i was little was lego. I liked it because i had the freedom to imagine anything and with enough ambition i was capable of turning my idea to reality.
-                        This days that toy has translated to programming and playing around with really anything to do with technology.  The most notorious being building web/computer application, working with 3D modeling /animation, and  playing with raspberry pi(“I have the zero w”).
-                        <br><br>
-                    
-                        I like to learn at any given opportunity this is how after all i have been advancing myself, leveraging online resources to sharpen my skills and knowledge has always been my go to ground. Occasionally i like to lose my focus by refuel my imagination and mental energy doing something else commonly being: playing soccer, running, cooking, watching youtube (related to design trends, robotics or even elon musk with his rockets) and anything adventurous. 
+                        I love to tinker and build things; it has always been like that since I can remember; In fact, my favourite toy when I was little was lego. I liked it because I had the freedom to imagine anything and with enough ambition, I was capable of turning an idea to reality.
                     </p>
-                </div>
-                
-                <div class="col-sm-12 col-md-6"> 
-                    <img src="../public/IMG/web-design.svg">
-                    <h2>Development</h2>
-                    <p> 
-                        Just like playing around with lego i love developing applications both web and computer based, I love the challenges they come with, the dynamics of there  designs and finally being around in the full life cycle from the moment i started a mockup to the point of deployment, it's something for me that gets better with bigger and tougher the project. 
-                        <br><br>
-                        Through developing personal projects it has pushed me to learn and getter better at different technologies, i believe given the opportunity to be apart of something  greater, it would accelerate my skills to industry standard. 
-                        Skills: HTML5, CSS3, jQuery, C#, Python, JavaScript ES6 >, React, Nodejs, BootStrap 4,
-                        Visual Studio 2017, VS-Code, Version control, Unit-Testing (react, javascript and python), PLC and SDLC process.
+                    <p>
+                        These days that toy has morphed to programming and robotics. Mostly around building web and desktop applications, working with 3D modelling as well as animations and playing with raspberry pi w.
                     </p>
                 </div>
 
-                <div class="col-sm-12 col-md-6">
-                    <img src="../public/IMG/target.svg">
-                    <h2>Goals</h2>
-
-                    <ol>
-                        <li>
-                            <p>   
-                                I want to get into the web / software development industry as a way to kick start my career and to work with amazing like minded people for a greater course.
-                            </p>  
-                        </li>
-                        <li>
-                            <p>    
-                                I want  to collaborate with people especially those in my line of interest, I believe great things can be accomplished given my passion and ambition for the industry.
-                            </p>
-                        </li>
-                        <li>
-                            <p>    
-                                In the distant future i want to extend my hands, by starting a company to help people by either providing online services or find a solution through a product. As such It is my mission to learn as much as possible from those who already are in the industry and actively practising their crafts.
-                            </p>
-                        </li>
-                    </ol>
+                <div class="Learning row"> 
+                    <div class="col-sm-12 col-md-4">
+                            <img src="../public/IMG/Developing.svg">
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                        <p>
+                            I like to learn at any given opportunity. After all, this is how I have been advancing myself through the use of online resources. Occasionally I like to unstrain my focus by playing soccer, running, cooking, watching youtube (related to design trends, robotics or even Elon musk with his rockets) and anything adventurous.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="col-12  Overview">
+                <div class="technical">
+                <div class="Development row"> 
+                    <div class="col-12">
+                        <img src="../public/IMG/web-design.svg">
+                        <h1>Development</h1>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <p> 
+                            Just like playing with lego I love developing applications, I like the challenges, the dynamics of design and of course being around the full cycle of the particular software; from the moment I start a mockup to the point of deployment, it's something for me that gets more certifying the bigger and more robust the project.
+                        </p>
+                        <p>
+                            Through developing personal projects it has pushed me to learn and getter better at different technologies, i believe given the opportunity to be apart of something  greater, it would accelerate my skills to industry standard.
+                        </p>
+                    </div>
+                    <div class="col-sm-12 col-md-6" id="Skils">
+                        <h4>Skills</h4>
+                        <span>HTML5</span>
+                        <span>Unit-Testing (react, javascript and python)</span>
+                        <span>C#</span>
+                        <span>VS-Code</span>
+                        <span>Python</span>
+                        <span>Visual Studio 2017</span>
+                        <span>JavaScript ES6 ></span>
+                        <span>React</span>
+                        <span>Nodejs</span>
+                        <span>BootStrap 4</span>
+                        <span>CSS3</span>
+                        <span>Version control</span>
+                        <span>jQuery</span>
+                        <span>PLC and SDLC process</span>
+                    </div>
+                </div>
+
+                <div class="Goals row">
+                    <div class="col-12">
+                        <img src="../public/IMG/target.svg">
+                        <h1>Goals</h1>
+                    </div>
+
+                    <div class="goal1 col-sm-12 col-md-6">
+                        <span>1</span>
+                        <div>
+                            <h4>Career</h4>
+                            <p>
+                                Get into the web or software development industry as a way to kick-start my career which also serves as an opportunity to work with amazing like-minded people.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="goal2 col-sm-12 col-md-6">
+                        <span>2</span>
+                        <div> 
+                            <h4>Collaboration</h4> 
+                            <p> 
+                                Collaborate with people especially those in the line of interest, and perhaps great things can be accomplished given my passion and ambition for the industry.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="goal3 col-sm-12 col-md-6">
+                        <span>3</span>
+                        <div> 
+                            <h4>Plans</h4> 
+                            <p>
+                                In the distant future, prepare to start a business to help people by either providing online services or find a solution through a product. As such, it should be your mission to learn as much as possible from those who are already in the industry and actively practising their crafts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="goal4 col-sm-12 col-md-6">
+                        <span>4</span>
+                        <div> 
+                            <h4>Personal</h4> 
+                            <p>
+                                Train to go Skydiving by yourself and get someone to take a pic of yourself sitting in a simple cross-legged position; meditating.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="Overview col-12">
                     <div>
                         <img src="../public/IMG/viewer.svg"> 
                         <h2>Overview</h2> 
@@ -128,18 +189,16 @@
                     <p> 
                         I believe my ambition combined with the willingness to learn at a moment notice and the ability to hit the ground running makes me adaptable to most situations in a company and therefore becoming a viable contributor to the team.
                     </p> 
-                </div>
 
-                <div class="col-12">
-                    <button class="text-light contact">Get In Touch</button>
+                    <button class="text-light contact2" onclick="Navigate('LContact')">Get In Touch</button>
                 </div>
             </section>
+            <div class="ConnectLines2"></div>
         
             <section class="Work">
-                
                 <h1>Latest Projects </h1>
 
-                <div class="project">
+                <div class="project1">
                     <div> 
                         <span class="btn btn-primary">HTML - EJS</span>
                         <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -152,11 +211,11 @@
 
                     <div class="Button"> 
                         <button>View Source<br><i class="fab fa-github-square"></i></button>
-                        <button onclick="ShowProject(event,'ProjectDetails1')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                        <button onclick="ShowProject('ProjectDetails1')">Show Project<br><i class="fas fa-rocket"></i></button>  
                     </div>  
                 </div>
 
-                <div class="project">
+                <div class="project2">
                     <div> 
                         <span class="btn btn-primary">HTML - EJS</span>
                         <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -169,10 +228,10 @@
 
                     <div class="Button"> 
                         <button>View Source<br><i class="fab fa-github-square"></i></button>
-                        <button onclick="ShowProject(event,'ProjectDetails2')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                        <button onclick="ShowProject('ProjectDetails2')">Show Project<br><i class="fas fa-rocket"></i></button>  
                     </div>  
                 </div>
-                <div class="project">
+                <div class="project3">
                     <div> 
                         <span class="btn btn-primary">HTML - EJS</span>
                         <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -185,11 +244,11 @@
 
                     <div class="Button"> 
                         <button>View Source<br><i class="fab fa-github-square"></i></button>
-                        <button onclick="ShowProject(event,'ProjectDetails3')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                        <button onclick="ShowProject('ProjectDetails3')">Show Project<br><i class="fas fa-rocket"></i></button>  
                     </div>  
                 </div>
 
-                <div class="project">
+                <div class="project4">
                     <div> 
                         <span class="btn btn-primary">HTML - EJS</span>
                         <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -202,10 +261,10 @@
 
                     <div class="Button"> 
                         <button>View Source<br><i class="fab fa-github-square"></i></button>
-                        <button onclick="ShowProject(event,'ProjectDetails4')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                        <button onclick="ShowProject('ProjectDetails4')">Show Project<br><i class="fas fa-rocket"></i></button>  
                     </div>  
                 </div>
-                <div class="project">
+                <div class="project5">
                     <div> 
                         <span class="btn btn-primary">HTML - EJS</span>
                         <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -218,10 +277,10 @@
 
                     <div class="Button"> 
                         <button>View Source<br><i class="fab fa-github-square"></i></button>
-                        <button onclick="ShowProject(event,'ProjectDetails5')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                        <button onclick="ShowProject('ProjectDetails5')">Show Project<br><i class="fas fa-rocket"></i></button>  
                     </div>  
                 </div>
-                <div class="project">
+                <div class="project6">
                         <div> 
                             <span class="btn btn-primary">HTML - EJS</span>
                             <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -234,10 +293,10 @@
     
                         <div class="Button"> 
                             <button>View Source<br><i class="fab fa-github-square"></i></button>
-                            <button onclick="ShowProject(event,'ProjectDetails6')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                            <button onclick="ShowProject('ProjectDetails6')">Show Project<br><i class="fas fa-rocket"></i></button>  
                         </div>  
                     </div> 
-                    <div class="project">
+                    <div class="project7">
                             <div> 
                                 <span class="btn btn-primary">HTML - EJS</span>
                                 <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
@@ -250,19 +309,17 @@
         
                             <div class="Button"> 
                                 <button>View Source<br><i class="fab fa-github-square"></i></button>
-                                <button onclick="ShowProject(event,'ProjectDetails7')">Show Project<br><i class="fas fa-rocket"></i></button>  
+                                <button onclick="ShowProject('ProjectDetails7')">Show Project<br><i class="fas fa-rocket"></i></button>  
                             </div>  
                         </div> 
             </section>
-
+            <div class="ConnectLines3"></div>
             <section class="Contact text-light">
                 <i class="fas fa-envelope-open-text"></i>
 
                 <h1>Get In Touch</h1>
                 <p>
-                    You want to collaborate or have questions?
-                    <br>
-                    Greate!!
+                    You want to collaborate or have questions? Greate!!
                     <br>
                     Please do get in touch with me. Use the form below or find other ways neccesary; 
                     <br>
@@ -270,48 +327,234 @@
                 </p>
                 
                 <div class="contactLinks">
-                    <span><i class="fab fa-github"></i></span>
-                    <span><i class="fab fa-codepen"></i></span>
-                    <span><i class="fab fa-linkedin"></i></span>
-                    <span><i class="far fa-address-card"></i></span>
-                    <span><i class="fas fa-envelope"></i></span>
+                    <a href="https://github.com/TheRigidNinja?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://codepen.io/minotauro49" target="_blank"><i class="fab fa-codepen"></i></a>
+                    <a href="https://docs.google.com/document/d/1h4KS1pYusOZ5Q56ovvfGQ86N0oafmKD_SWUzvI0iIoE/edit?usp=sharing" target="_blank"><i class="far fa-address-card"></i></a>
+                    <a href="##" onclick="ShowEmailPhone()"><i class="fas fa-envelope"></i> &nbsp&nbsp | &nbsp&nbsp<i class="fas fa-phone"></i></a>
                 </div>
 
-                <form>
-                    <input type="Name" required>
-                    <input type="Subject" required>
-                    <textarea placeholder="Message" required></textarea>
+                <form method="POST" action="send">
+                    <input type="Name" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="email" required>
+                    <input type="Subject" name="subject" placeholder="Subject"required>
+                    <textarea placeholder="Message" name="message" required></textarea>
                     <button><i class="fas fa-paper-plane"></i></button>
                 </form>
             </section>
         </div>
     </div>
 
+
+
+
     <div class="MoreInfo">
-        <div class="Reveal">
-            <div class="ProjectDetails1" >
-                s
+        <div class="ProjectDetails1">
+            <div class="ImgSection">
+                <div class="imgCont"> 
+                    <img src="../public/IMG/Projects/Chat_app.png">
+                </div>
             </div>
 
-            <div class="ProjectDetails2" >
+            <div class="ContentSection"> 
+                <div class="MoreContent">
+                    <h1>Chat App</h1>
+                    <p>
+                        <li><strong>Category:</strong> Website / Web-app</li>
+                        <li><strong>Role:</strong> Design/Code</li>
+                        <li><strong>Date:</strong> 2019</li> 
+                    </p>
+                    <p>
+                        For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                    </p>
+    
+                    <h4>Technology Used:</h4>
+                    <div class="technologies">
+                        <span class="btn btn-primary">HTML - EJS</span>
+                        <span class="btn btn-secondary">NodeJs - Socket.io, Express</span>
+                        <span class="btn btn-success">JavaSript</span>
+                        <span class="btn btn-danger">Firebase - FireStore(DB)</span>
+                        <span class="btn btn-dark">SASS</span>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="ProjectDetails3" >
+        <div class="ProjectDetails2" >
+            <div class="ImgSection">
+                <div class="imgCont"> 
+                    <img src="../public/IMG/Projects/FullHome.png">
+                </div>
             </div>
-
-            <div class="ProjectDetails4" >
-            </div> 
-
-            <div class="ProjectDetails5" >
-            </div> 
-
-            <div class="ProjectDetails6" >
-            </div>
-            
-            <div class="ProjectDetails7" >
-            </div>              
+    
+            <div class="ContentSection"> 
+                <div class="MoreContent">
+                    <h1>Studentaccomm</h1>
+                    <p>
+                        <li><strong>Category:</strong> Website</li>
+                        <li><strong>Role:</strong> Design</li>
+                        <li><strong>Date:</strong> 2019</li> 
+                    </p>
+                    <p>
+                        For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                    </p>
+    
+                    <h4>Technology Used:</h4>
+                    <div class="technologies">
+                        <span class="btn btn-primary">Adobe XD CC</span>
+                    </div>
+                </div>
         </div>
     </div>
+
+        <div class="ProjectDetails3" >
+            <div class="ImgSection">
+                <div class="imgCont"> 
+                    <img src="../public/IMG/Projects/App.png">
+                </div>
+            </div>
+
+            <div class="ContentSection"> 
+                <div class="MoreContent">
+                <h1>App landing page</h1>
+                <p>
+                    <li><strong>Category:</strong> Website</li>
+                    <li><strong>Role:</strong> Code</li>
+                    <li><strong>Date:</strong> 2019</li> 
+                </p>
+                <p>
+                    For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                </p>
     
+                <h4>Technology Used:</h4>
+                <div class="technologies">
+                    <span class="btn btn-primary">HTML5</span>
+                    <span class="btn btn-success">jQuery</span>
+                    <span class="btn btn-dark">SASS</span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="ProjectDetails4" >
+            <div class="ImgSection">
+                <div class="imgCont"> 
+                    <img src="../public/IMG/Projects/Portfolio.png">
+                </div>
+            </div>
+
+            <div class="ContentSection"> 
+                <div class="MoreContent">
+                    <h1>My Portfolio</h1>
+                    <p>
+                        <li><strong>Category:</strong> Website</li>
+                        <li><strong>Role:</strong> Design / Code</li>
+                        <li><strong>Date:</strong> 2019</li> 
+                    </p>
+                    <p>
+                        For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                    </p>
+    
+                    <h4>Technology Used:</h4>
+                    <div class="technologies">
+                        <span class="btn btn-primary">HTML5</span>
+                        <span class="btn btn-success">jQuery</span>
+                        <span class="btn btn-dark">SASS</span>
+                    </div>
+            </div>
+        </div>
+        </div>
+
+            <div class="ProjectDetails5" >
+                    <div class="ImgSection">
+                            <div class="imgCont"> 
+                                <img src="../public/IMG/Projects/Todo.png">
+                            </div>
+                        </div>
+            
+                        <div class="ContentSection"> 
+                            <div class="MoreContent">
+                                <h1>Todos</h1>
+                                <p>
+                                    <li><strong>Category:</strong>Website/Web-App</li>
+                                    <li><strong>Role:</strong> Design / Code</li>
+                                    <li><strong>Date:</strong> 2019</li> 
+                                </p>
+                                <p>
+                                    For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                                </p>
+                
+                                <h4>Technology Used:</h4>
+                                <div class="technologies">
+                                    <span class="btn btn-primary">React-Redux</span>
+                                    <span class="btn btn-success">JavaScript</span>
+                                    <span class="btn btn-dark">CSS</span>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="ProjectDetails6" >
+                    <div class="ImgSection">
+                            <div class="imgCont"> 
+                                <img src="../public/IMG/Projects/SlitherClassic.png">
+                            </div>
+                        </div>
+            
+                        <div class="ContentSection"> 
+                            <div class="MoreContent">
+                                <h1>Slither-Classic</h1>
+                                <p>
+                                    <li><strong>Category:</strong> Game</li>
+                                    <li><strong>Role:</strong> Design / Code</li>
+                                    <li><strong>Date:</strong> 2019</li> 
+                                </p>
+                                <p>
+                                    For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                                </p>
+                
+                                <h4>Technology Used:</h4>
+                                <div class="technologies">
+                                    <span class="btn btn-primary">HTML5</span>
+                                    <span class="btn btn-success">JavaScript</span>
+                                    <span class="btn btn-dark">CSS</span>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="ProjectDetails7" >
+                            <div class="ImgSection">
+                                    <div class="imgCont"> 
+                                        <img src="../public/IMG/Projects/Pizza.png">
+                                    </div>
+                                </div>
+                    
+                                <div class="ContentSection"> 
+                                    <div class="MoreContent">
+                                        <h1>Pizza website</h1>
+                                        <p>
+                                            <li><strong>Category:</strong> Website</li>
+                                            <li><strong>Role:</strong> Code</li>
+                                            <li><strong>Date:</strong> 2019</li> 
+                                        </p>
+                                        <p>
+                                            For a personal project, I designed and coded this web-app. The initial motivation was to make a simple web-app where it incorporates the use of Nodejs - Socket.io, unfortunately, I fell into the trap of making it better, which lead me to spend more time than initially planned to make this message like app.
+                                        </p>
+                        
+                                        <h4>Technology Used:</h4>
+                                        <div class="technologies">
+                                            <span class="btn btn-primary">HTML5</span>
+                                            <span class="btn btn-success">JavaScript</span>
+                                            <span class="btn btn-dark">Sass</span>
+                                        </div>
+                                </div>
+                            </div>
+                            </div>
+    </div>
+    
+<style>
+    pre{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+</style>
+
 </body>
 </html>

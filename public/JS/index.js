@@ -1,60 +1,96 @@
+var toggleType = "Menu"
 
-// function LoadBackground(){
-//     const canvas = document.getElementsByTagName("CANVAS")[0],
-//     ctx = canvas.getContext('2d');
-//     var animate = 0,
-//     animationTime = Math.random()*300+100;
+// Instraction to toggle between the open and close states of menu bar
+// Don't mess/change anything in the array - goodluck spending time to figuring whats wrong
+var perimetersToggle = {
+    Close:[180,"menu","none","0px",0,0,1],
+    Open:[90,"cancel","block","100%",1,10,1.1],
+    DetailsSm:[0,"100%","50%","-50%",0,"100%","70%","100%",4,0,0,"50%"],
+    DetailsLg:["-50%","50%","100%",0,"100%","50%","100%",0,0,4,"50%",0],
+    DetailsSmRm: [0,"-50%",0,"100%"],
+    DetailsLgRm: ["-50%",0,"100%",0],
+    CurrentState: [],
+}
 
-//     canvas.width  = window.innerWidth;
-//     canvas.height = window.innerHeight;
+function ShowProject(projectType){
+    toggleType = projectType;
 
-//     var gridValue = {
-//         ctx: ctx,
-//         Xcenter: 100,
-//         Ycenter: 100,
-//         num: .2
-//     };
+    if ($(window).width() <= 980){ 
+        perimetersToggle.CurrentState = perimetersToggle.DetailsSm
+    }else{
+        perimetersToggle.CurrentState = perimetersToggle.DetailsLg
+    }
 
-//     var animateColor = () =>{
-//         animate++;
-//         window.requestAnimationFrame(animateColor);
-//         //  console.log(animate, animationTime);
-//         if(animate  > animationTime){
-//             animate = 0
-//             animationTime = Math.random()*300+100;
-//             ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-//             for (let n = 0; n < Math.round(window.innerWidth/50); n++) {
-//                 let z = n%2 != 0?86.5:0
-//                 for (let i = 0; i < Math.round(window.innerHeight/150); i++) {
-//                     gridValue.Xcenter =  (n*150)
-//                     gridValue.Ycenter =  (i*173.2)+z
-//                     // gridValue.num =
-//                     Hexagon(gridValue)
-//                 }
-//             }
+    // Toggle projects details
+    $(`.MoreInfo, .${projectType}`).css("display","block");
+    $(".bodyContent").css("filter","blur(5px)");
+    $("#menu").css({
+        transform: "scale(1.5)translate(-30px, 20px)rotateZ(90deg)",
+    }).attr("src","../public/IMG/cancel.svg");
 
-//         }
-//     }
+    $(`.${projectType}`).find(".ImgSection").css({
+        left:perimetersToggle.CurrentState[0],width:perimetersToggle.CurrentState[1],height:perimetersToggle.CurrentState[2],top:perimetersToggle.CurrentState[3]
+    }).animate({left: 0,top: 0,opacity: 1},250);
 
-//     window.requestAnimationFrame(animateColor)
+    $(`.${projectType}`).find(".ContentSection").css({
+        left:perimetersToggle.CurrentState[4],width:perimetersToggle.CurrentState[5],height:perimetersToggle.CurrentState[6],top:perimetersToggle.CurrentState[7],
+        "border-top":perimetersToggle.CurrentState[8]+"px solid rgba(0,0,0,0.5)",
+        "border-left":perimetersToggle.CurrentState[9]+"px solid rgba(0,0,0,0.5)"
+    }).animate({left:perimetersToggle.CurrentState[10],top:perimetersToggle.CurrentState[11],opacity: 1},250);
+}
 
 
-//     // Hexagon(gridValue)
-// }
+function ShowNav(){
+    // toggles menu bar
+    if (toggleType == "Menu"){ 
+        if($("#menu").attr('src').includes("menu")){
+            perimetersToggle.CurrentState = perimetersToggle.Open
+        }else{
+            perimetersToggle.CurrentState = perimetersToggle.Close
+        }
 
-// // Makes A hexigon
-// function Hexagon({ctx,Xcenter,Ycenter,num}){
-//     ctx.beginPath();
-//     ctx.moveTo (Xcenter +  100 * Math.cos(0), Ycenter +  100 *  Math.sin(0));          
-    
-//     for (var i = 1; i <= 6;i += 1) {
-//         ctx.lineTo (Xcenter + 100 * Math.cos(i * 2 * Math.PI / 6), Ycenter + 100 * Math.sin(i * 2 * Math.PI / 6));
-//     }
+        $("#menu").css("transform","rotateZ("+perimetersToggle.CurrentState[0]+"deg)").attr("src","../public/IMG/"+perimetersToggle.CurrentState[1]+".svg")
 
-//     ctx.fillStyle = `rgba(255,255,255,${Math.random()-.7})`;
-//     ctx.lineWidth = 1;
-//     ctx.fill();
-// }
+        $("nav").css({
+            "display":perimetersToggle.CurrentState[2],
+            "height":perimetersToggle.CurrentState[3],
+            "opacity":perimetersToggle.CurrentState[4]
+        })
 
-window.onresize = function(){}
-// window.onload = function(){LoadBackground();}
+        $(".bodyContent").css({
+            "filter": "blur("+perimetersToggle.CurrentState[5]+"px)",
+            "transform": "scale("+perimetersToggle.CurrentState[6]+")"
+        })
+
+    }else{
+
+        // project details back to default 
+        projectType = toggleType;
+        toggleType = "Menu";
+
+        if ($(window).width() <= 980){ 
+            perimetersToggle.CurrentState = perimetersToggle.DetailsSmRm
+        }else{
+            perimetersToggle.CurrentState = perimetersToggle.DetailsLgRm
+        }
+
+        $(".bodyContent").css("filter","blur(0px)");
+        $("#menu").css({
+            transform: "scale(1)translate(0px, 0px)rotateZ(0deg)",
+        }).attr("src","../public/IMG/menu.svg");
+
+        $(`.${projectType}`).find(".ImgSection").animate({left: perimetersToggle.CurrentState[0],top: perimetersToggle.CurrentState[1],opacity: 0},250);
+        
+        $(`.${projectType}`).find(".ContentSection").animate({left:perimetersToggle.CurrentState[2],top:perimetersToggle.CurrentState[3],opacity: 0},250,()=>{
+             $(`.MoreInfo, .${projectType}`).css("display","none");
+        });
+    }
+}
+
+
+// Show Email and Phone Number 
+function ShowEmailPhone(){
+    prompt("Quickest way to get in touch","📞:   brian.shisanya2000@gmail.com         ☎:   0416047871")
+}
+
+
