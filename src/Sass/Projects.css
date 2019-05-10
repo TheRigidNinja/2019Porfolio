@@ -1,0 +1,128 @@
+.Project {
+  -webkit-transition: all ease-in-out .4s;
+  transition: all ease-in-out .4s;
+  position: relative;
+  top: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Box {
+  position: relative;
+  background: teal;
+  margin: 15px 15px;
+  border-radius: 2px;
+  height: 350px;
+  max-width: 380px !important;
+  background: #23242c83;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.Description {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 68%;
+}
+
+.Description img, .Description div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.Description a {
+  display: inline-block;
+  padding: 30px;
+  color: #32e697;
+}
+
+.Description p {
+  color: white;
+}
+
+.Description div {
+  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.4s;
+  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.4s;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  opacity: 0;
+}
+
+.Description:hover div {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+.Details {
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.Details h2 {
+  color: white;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.Details span {
+  position: relative;
+  background: white;
+  color: #58677c;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 2px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.Details span:hover {
+  color: #e91e63;
+}
+
+.FilterBar {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 180px;
+}
+
+.FilterBar span {
+  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
+  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  padding: 3px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin: 2px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.FilterBar span:hover {
+  color: #32e697;
+}
+
+.ActiveFilter {
+  color: #e91e63 !important;
+  text-decoration: line-through;
+  letter-spacing: 5px;
+}
+/*# sourceMappingURL=Projects.css.map */

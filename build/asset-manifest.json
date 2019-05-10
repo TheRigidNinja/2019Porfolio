@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.10ad5059.chunk.css",
+    "main.js": "/static/js/main.519032c6.chunk.js",
+    "main.js.map": "/static/js/main.519032c6.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.41fdeb48.chunk.js": "/static/js/2.41fdeb48.chunk.js",
+    "static/js/2.41fdeb48.chunk.js.map": "/static/js/2.41fdeb48.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.cf6d85fd65770911ea6947894e983af6.js": "/precache-manifest.cf6d85fd65770911ea6947894e983af6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.10ad5059.chunk.css.map": "/static/css/main.10ad5059.chunk.css.map",
+    "static/media/ApplandingPage.png": "/static/media/ApplandingPage.ebd43439.png",
+    "static/media/AutoTrade.png": "/static/media/AutoTrade.897beda7.png",
+    "static/media/index.css": "/static/media/rz-regular.0974b467.woff2",
+    "static/media/Chat_app.png": "/static/media/Chat_app.5daffd9a.png",
+    "static/media/Defender.png": "/static/media/Defender.693d3b0a.png",
+    "static/media/LogoW.svg": "/static/media/LogoW.64f46c5a.svg",
+    "static/media/Memory.png": "/static/media/Memory.44f95d13.png",
+    "static/media/OldPortfolio.png": "/static/media/OldPortfolio.a35fb37e.png",
+    "static/media/SlitherClassic.png": "/static/media/SlitherClassic.eaa01fe0.png",
+    "static/media/Tanki.png": "/static/media/Tanki.d0cc729c.png",
+    "static/media/ThisPortfolio.png": "/static/media/ThisPortfolio.38f33d15.png",
+    "static/media/Todos.png": "/static/media/Todos.f66e8b72.png",
+    "static/media/Unsubscriber.png": "/static/media/Unsubscriber.46cb9d6c.png",
+    "static/media/V2Site.png": "/static/media/V2Site.88b9d9e9.png",
+    "static/media/VidoeProduction.png": "/static/media/VidoeProduction.836ce368.png",
+    "static/media/pizza.png": "/static/media/pizza.7166b291.png"
+  }
+}

@@ -1,0 +1,99 @@
+.Project
+    transition: all ease-in-out .4s
+    position: relative
+    top: 220px
+    display: flex
+    align-content: space-around
+    justify-content: center
+    margin: 0px
+    padding: 0px
+    overflow: scroll !important
+    -webkit-overflow-scrolling: touch
+
+.Box
+    position: relative
+    background: teal
+    margin: 15px 15px
+    border-radius: 2px
+    height: 350px
+    max-width: 380px !important
+    background: #23242c83
+    padding: 0px 
+    overflow: hidden
+
+.Description
+    position: relative
+    top: 0px
+    width: 100%
+    height: 68%
+
+    img, div
+        width: 100%
+        height: 100%
+        position: absolute
+        text-align: center
+        background: rgba(0,0,0,0.7)
+    a 
+        display: inline-block
+        padding: 30px
+        color: rgb(50,230,151)
+    p 
+        color: white
+
+    div
+        transition: all cubic-bezier(1, -0.22, 0.38, 0.86) .4s
+        transform: scale(.5)
+        opacity: 0
+
+    &:hover div
+        transform: scale(1) 
+        opacity: 1
+
+.Details
+    text-align: center
+    padding: 10px 0px
+
+    h2
+        color: white
+        font-size: 20px
+        padding-bottom: 5px
+
+    span 
+        position: relative
+        background: white
+        color: #58677c
+        padding: 3px 10px
+        border-radius: 20px
+        font-size: 12px
+        margin: 2px
+        font-weight: bold
+        display: inline-block
+
+        &:hover
+            color: #e91e63
+
+.FilterBar
+    position: relative
+    width: 100%
+    text-align: center
+    top: 180px
+
+    span
+        transition: all cubic-bezier(1,-0.22,.38,.86) .2s
+        cursor: pointer
+        position: relative
+        color: white
+        padding: 3px 15px
+        border-radius: 20px
+        font-size: 13px
+        margin: 2px
+        font-weight: bold
+        display: inline-block
+
+        &:hover
+            color: rgb(50,230,151)
+            
+.ActiveFilter
+    color: #e91e63 !important
+    text-decoration: line-through
+    letter-spacing: 5px
