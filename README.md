@@ -1,6 +1,6 @@
 ## My Portfolio
 
 
-[ View Live ](brianshisanya.com)
+[ View Live ](https://brianshisanya.com/)
 =================================
 
