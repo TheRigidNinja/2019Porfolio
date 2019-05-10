@@ -159,9 +159,9 @@ export default class Project extends Component{
           Details={[{
             "Header":"This Portfolio - Site",
             "Launch":"##",
-            "Source":"##",
+            "Source":"https://github.com/TheRigidNinja/2019Porfolio",
             "IMG":ThisPortfolio,
-            "Description":"You looking at it!"}]}/>
+            "Description":"You looking at it (^^;)"}]}/>
       
           <ProjectBox Tech={["JavaScript","HTML","CSS"]}
           FilterCommands = {this.state.filterObj}
