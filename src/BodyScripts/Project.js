@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import "../Sass/Projects.css"
 import ProjectBox from "./ProjectBox"
 
-import ChatApp from "../IMG/Chat_app.png";
-import Applanding from "../IMG/ApplandingPage.png";
-import Todos from "../IMG/Todos.png";
-import SlitherClassic from "../IMG/SlitherClassic.png";
-import Pizza from "../IMG/pizza.png";
-import Defender from "../IMG/Defender.png";
-import OldPortfolio from "../IMG/OldPortfolio.png";
-import VidoeProduction from "../IMG/VidoeProduction.png";
-import AutoTrade from "../IMG/AutoTrade.png";
-import ThisPortfolio from "../IMG/ThisPortfolio.png";
-import Memory from "../IMG/Memory.png";
-import V2Site from "../IMG/V2Site.png";
-import Tanki from "../IMG/Tanki.png";
-import Unsubscriber from "../IMG/Unsubscriber.png";
+import ChatApp from "../IMG/Chat_app.jpg";
+import Applanding from "../IMG/ApplandingPage.jpg";
+import Todos from "../IMG/Todos.jpg";
+import SlitherClassic from "../IMG/SlitherClassic.jpg";
+import Pizza from "../IMG/pizza.jpg";
+import Defender from "../IMG/Defender.jpg";
+import OldPortfolio from "../IMG/OldPortfolio.jpg";
+import VidoeProduction from "../IMG/VidoeProduction.jpg";
+import AutoTrade from "../IMG/AutoTrade.jpg";
+import ThisPortfolio from "../IMG/ThisPortfolio.jpg";
+import Memory from "../IMG/Memory.jpg";
+import V2Site from "../IMG/V2Site.jpg";
+import Tanki from "../IMG/Tanki.jpg";
+import Unsubscriber from "../IMG/Unsubscriber.jpg";
 
 export default class Project extends Component{
   state = {
@@ -27,28 +27,31 @@ export default class Project extends Component{
   handleFilterClick=(e)=>{
     let container = document.querySelector(".Project"),
         elment = e.target;
-        container.style.opacity="0"
-        container.style.top="180px"
 
-    setTimeout(()=>{
-      this.setState({
-        filterObj:elment.innerHTML,
-        idType: this.ToggleFilterActive(elment)
-      },()=>{
-        setTimeout(()=>{
-          console.log("object");
-          container.style.opacity="1"
-          container.style.top="220px"
-        },500)
-      })
-    },350)
+    console.log(elment.innerHTML)
+    if(this.state.filterObj !== elment.innerHTML && this.state.filterType.includes(elment.innerHTML)){
+        container.style.opacity="0";
+        container.style.top="180px";
+
+      setTimeout(()=>{
+        this.setState({
+          filterObj:elment.innerHTML,
+          idType: this.ToggleFilterActive(elment)
+        },()=>{
+          setTimeout(()=>{
+            container.style.opacity="1"
+            container.style.top="220px"
+          },500)
+        })
+      },350)
+
+    }
   }
 
 
   ToggleFilterActive = (elm) =>{
     if(this.state.filterType.includes(elm.innerHTML)){
       document.getElementById(this.state.idType).className="";
-      console.log(this.state.idType);
       elm.className="ActiveFilter";
       return elm.getAttribute("id")
     }
