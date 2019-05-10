@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3cb647819a8048064a7a83b69c3c5d61",
+    "revision": "3404373639633178c197ebc24b57b200",
     "url": "/index.html"
   },
   {
-    "revision": "6e8ee75c7f99b39a95ad",
-    "url": "/static/css/main.10ad5059.chunk.css"
+    "revision": "fe8121c81ab461086918",
+    "url": "/static/css/main.c574a7c8.chunk.css"
   },
   {
     "revision": "979448738f93ee254750",
     "url": "/static/js/2.41fdeb48.chunk.js"
   },
   {
-    "revision": "6e8ee75c7f99b39a95ad",
-    "url": "/static/js/main.5d95dbc2.chunk.js"
+    "revision": "fe8121c81ab461086918",
+    "url": "/static/js/main.914091dc.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -82,9 +82,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6849581c2c5f05e3a9f87c0b95d56ef9",
     "url": "/static/media/pizza.6849581c.jpg"
-  },
-  {
-    "revision": "0974b467128abf72e70ba2f8af40b059",
-    "url": "/static/media/rz-regular.0974b467.woff2"
   }
 ]);
