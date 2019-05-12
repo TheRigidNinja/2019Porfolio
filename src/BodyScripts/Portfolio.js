@@ -7,8 +7,33 @@ import About from "./About";
 
 export default class Portfolio extends Component {
   // state = {
-    
+
   // }
+
+
+  componentDidMount(){
+    var elm = document.getElementById("root");
+    elm.addEventListener("scroll",(e)=>this.handleMenuDrop(e))
+  }
+
+  // Check scroll 
+  handleMenuDrop=(e)=>{
+    var nav = document.querySelector("nav"),
+    img = document.querySelector("nav img");
+    
+    if(e.target.scrollTop >= 145){
+      nav.style.height="100px"
+      nav.style.top="0px"
+      img.style.margin="0px 0px 0px 0px"
+      img.style.width="50px"
+    }else{
+      nav.style.height="0px"
+      nav.style.top="50px"
+      img.style.margin="30px 0px 0px 0px"
+      img.style.width="80px"
+    }
+  }
+
 
   render() {
     return (

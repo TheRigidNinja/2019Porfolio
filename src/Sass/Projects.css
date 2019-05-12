@@ -46,8 +46,16 @@
 
 .Description a {
   display: inline-block;
-  padding: 30px;
+  padding: 20px 30px;
+  margin: 20px 0px;
   color: #32e697;
+  background: rgba(42, 69, 132, 0.4);
+  border-radius: 10px 0px 0px 10px;
+}
+
+.Description .Launch {
+  background: rgba(110, 67, 108, 0.4);
+  border-radius: 0px 10px 10px 0px;
 }
 
 .Description p {

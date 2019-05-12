@@ -64,7 +64,7 @@ nav {
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
-  padding: 0px 30px;
+  padding: 0px 40px;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -73,30 +73,22 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 0px;
-  top: 60px;
+  background: #25252e;
+  top: 50px;
 }
 
 nav img {
-  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  width: 50px;
-}
-
-nav img:hover {
-  -webkit-transform: scale(1.5) translateY(10px);
-          transform: scale(1.5) translateY(10px);
-}
-
-nav img:active {
-  -webkit-transform: scale(1.45) translateY(10px);
-          transform: scale(1.45) translateY(10px);
+  width: 80px;
+  margin-top: 30px;
 }
 
 .ContactNav {
   position: absolute;
   top: calc(100% - 60px);
-  left: 30px;
   z-index: 1;
+  background: rgba(37, 37, 46, 0.8);
+  border-radius: 0px 10px 0px 0px;
+  padding: 15px 40px;
 }
 
 #root {
@@ -165,6 +157,11 @@ nav img:active {
   }
   .Contact p {
     font-size: 16px;
+  }
+  a:hover {
+    color: #e91e63;
+    text-decoration: line-through;
+    letter-spacing: 5px;
   }
 }
 /*# sourceMappingURL=Index.css.map */

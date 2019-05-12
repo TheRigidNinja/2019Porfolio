@@ -8,7 +8,7 @@ export default function Contact() {
 
         <h1>Get In Touch</h1>
         <p>
-            You want to collaborate or have questions? Greate!!
+            You want to collaborate or have questions? Great!!
             <br/>
             Please do get in touch with me. Use the Links below or find other ways neccesary; 
             <br/>

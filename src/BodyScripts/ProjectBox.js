@@ -33,8 +33,8 @@ export default function ProjectBox({Tech,Header,Details,FilterCommands}) {
             <div className="Description">
                 <img src={Details.IMG} alt="Project"/>
                 <div>
-                    <a href={Details.Launch} target="_blank" rel="noopener noreferrer">Launch</a>
                     <a href={Details.Source} target="_blank" rel="noopener noreferrer">Source</a>
+                    <a href={Details.Launch} target="_blank" rel="noopener noreferrer" className="Launch">Launch</a>
                     <p>{Details.Description}</p>
                 </div>
             </div>
