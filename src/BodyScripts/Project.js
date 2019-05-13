@@ -9,6 +9,7 @@ import SlitherClassic from "../IMG/SlitherClassic.jpg";
 import Pizza from "../IMG/pizza.jpg";
 import Defender from "../IMG/Defender.jpg";
 import OldPortfolio from "../IMG/OldPortfolio.jpg";
+import OldPortfolio2 from "../IMG/OldPortfolio2.jpg";
 import VidoeProduction from "../IMG/VidoeProduction.jpg";
 import AutoTrade from "../IMG/AutoTrade.jpg";
 import ThisPortfolio from "../IMG/ThisPortfolio.jpg";
@@ -80,7 +81,7 @@ export default class Project extends Component{
             "Launch":"https://chatappe.herokuapp.com/",
             "Source":"https://github.com/TheRigidNinja/Chat-App",
             "IMG":ChatApp,
-            "Description":"An online chat application.  I made this to emulate messenger.  As well to serves my learning with different programming concepts."}]}/>
+            "Description":"An online chat application.  The aim was to use messenger as inspiration. And in the process, I get to learn different programming concepts."}]}/>
 
           <ProjectBox Tech={["Sass (Flexbox)","jQuery","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -89,7 +90,7 @@ export default class Project extends Component{
             "Launch":"https://therigidninja.github.io/App-landing-page/",
             "Source":"https://github.com/TheRigidNinja/App-landing-page",
             "IMG":Applanding,
-            "Description":"This site is an example of me practising getting better at translating mockup designs, to HTML CSS code."}]}/>
+            "Description":"An app landing page. I made it to practice, translating mockups designs, to HTML CSS code."}]}/>
               
           <ProjectBox Tech={["React/Redux","jQuery","HTML","CSS","Material Ui", "Firebase-FireStore"]}
           FilterCommands = {this.state.filterObj}
@@ -98,7 +99,7 @@ export default class Project extends Component{
             "Launch":"https://therigidninja.firebaseapp.com/",
             "Source":"https://github.com/TheRigidNinja/React_TodoList/tree/Todo's-Adcanced/todo_app",
             "IMG":Todos,
-            "Description":"Just a simple Todo react app. "}]}/>
+            "Description":"A simple todo app. "}]}/>
 
           <ProjectBox Tech={["CSS","JavaScript","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -107,7 +108,16 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Slither-Classic/index.html",
             "Source":"https://github.com/TheRigidNinja/Slither-Classic",
             "IMG":SlitherClassic,
-            "Description":"A game that takes ideas from the classic Snake and Slither.io"}]}/>
+            "Description":"I was inspired by the mechanics of classic Snake and Slither.io, and so as a result, I made this game."}]}/>
+
+           <ProjectBox Tech={["React/Redux","HTML","CSS"]}
+            FilterCommands = {this.state.filterObj}
+            Details={[{
+              "Header":"Old Portfolio2 - Site",
+              "Launch":"https://reactportfolio-e3bad.firebaseapp.com/",
+              "Source":"https://github.com/TheRigidNinja/React_Portfolio",
+              "IMG":OldPortfolio2,
+              "Description":"My old portfolio."}]}/>
 
           <ProjectBox Tech={["CSS (Flexbox)","jQuery","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -116,7 +126,7 @@ export default class Project extends Component{
             "Launch":"https://therigidninja.github.io/PizzaWebsite/",
             "Source":"https://github.com/TheRigidNinja/PizzaWebsite",
             "IMG":Pizza,
-            "Description":"I made this site with the aim to improve my skills in  CSS Flexbox and the general way I style elements."}]}/>
+            "Description":"The aim was to improve my knowledge, skills in CSS Flexbox and the general way I style elements."}]}/>
 
           <ProjectBox Tech={["CSS","JavaScript","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -125,12 +135,12 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Defender/index.html",
             "Source":"https://github.com/TheRigidNinja/Battle-ship",
             "IMG":Defender,
-            "Description":"A  space invader style game. It gives the player a challenge the survive as long as they can without touch the red circles."}]}/>
+            "Description":"A  space invader style game. It gives the player a challenge to survive as long as they can without touch the red circles."}]}/>
 
           <ProjectBox Tech={["Firebase - DB","HTML (SVG)","CSS","jQuery","Boostrap 4"]}
           FilterCommands = {this.state.filterObj}
           Details={[{
-            "Header":"Old Portfolio",
+            "Header":"Old Portfolio - Site",
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Portfolio/index.html",
             "Source":"https://github.com/TheRigidNinja/Portfolio-2.0",
             "IMG":OldPortfolio,
@@ -143,7 +153,8 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Inventory-System/index.html",
             "Source":"https://github.com/TheRigidNinja/VideoProduction",
             "IMG":VidoeProduction,
-            "Description":"This is an online web app that helps both teachers and students with the process."}]}/>
+            "Description":"A web app that helps teachers and students with the process of borrowing video production equipments."+
+            "It communicates to an excel sheet to give teachers updates on students that have borrowed production equipment."}]}/>
 
           <ProjectBox Tech={["Python","C# (Bunifu ui)"]}
           FilterCommands = {this.state.filterObj}
@@ -152,7 +163,7 @@ export default class Project extends Component{
             "Launch":"https://github.com/TheRigidNinja/CSharp-AutoTrader",
             "Source":"https://github.com/TheRigidNinja/CSharp-AutoTrader",
             "IMG":AutoTrade,
-            "Description":"A share market Bot that automatically makes trades, base on trends on \"MyASX\" share market game."}]}/>
+            "Description":"A share market Bot that automatically makes trades, base on market trends on \"MyASX\" share market game."}]}/>
     
           <ProjectBox Tech={["React/Redux","HTML","CSS (Flexbox)"]}
           FilterCommands = {this.state.filterObj}
@@ -179,7 +190,7 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Portfolio/assets/Projects/V2Rocket/index.html",
             "Source":"https://github.com/TheRigidNinja/V2Rocket/tree/master/V2Rocket",
             "IMG":V2Site,
-            "Description":"A history of V2 Rocket which also includes an intractice simulation"}]}/>
+            "Description":"A history of V2 Rocket which also includes an interactive simulation."}]}/>
 
           <ProjectBox Tech={["JavaScript","HTML","CSS"]}
           FilterCommands = {this.state.filterObj}
@@ -188,7 +199,7 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Portfolio/assets/Projects/Tanky/index.html",
             "Source":"https://github.com/TheRigidNinja/Tanky/tree/master/Tanky",
             "IMG":Tanki,
-            "Description":"A 2d Tank Simulation"}]}/>
+            "Description":"A 2D Tank Simulation."}]}/>
 
           <ProjectBox Tech={["Python","C#"]}
           FilterCommands = {this.state.filterObj}
@@ -197,7 +208,7 @@ export default class Project extends Component{
             "Launch":"https://github.com/TheRigidNinja/Unsubscriber",
             "Source":"https://github.com/TheRigidNinja/Unsubscriber",
             "IMG":Unsubscriber,
-            "Description":"Unsubscriber is a C# application that is intended to be used to unsubscribe Gmail spam emails."}]}/>
+            "Description":"An application that unsubscribes, blocks and deletes Gmail spams. It also affects any email that is not classified and important."}]}/>
         </div>
       </div>
     )

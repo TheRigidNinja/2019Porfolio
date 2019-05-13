@@ -10,7 +10,7 @@ export default function Contact() {
         <p>
             You want to collaborate or have questions? Great!!
             <br/>
-            Please do get in touch with me. Use the Links below or find other ways neccesary; 
+            Please do get in touch with me. <br/> Use the links below or find other ways necessary; 
             <br/>
             I won't miss it!
         </p>

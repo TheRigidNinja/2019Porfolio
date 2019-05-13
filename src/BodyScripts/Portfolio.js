@@ -48,10 +48,11 @@ export default class Portfolio extends Component {
 
 
         <Switch>
-          <Route exact path="/" component={Project} />
           <Route path="/Projects" component={Project} />
           <Route path="/About" component={About} />
           <Route path="/Contact" component={Contact} />
+          <Route path="/OldPortfolio" component={Contact} />
+          <Route path="" component={Project} />
         </Switch>
 
       </BrowserRouter>
