@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../Sass/Projects.css"
+import "../css/Projects.css"
 import ProjectBox from "./ProjectBox"
 
 import ChatApp from "../IMG/Chat_app.jpg";

@@ -133,4 +133,8 @@
   text-decoration: line-through;
   letter-spacing: 5px;
 }
-/*# sourceMappingURL=Projects.css.map */
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
