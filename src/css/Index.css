@@ -59,11 +59,11 @@ button:active {
 
 nav {
   width: 100%;
-  position: absolute;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 1;
+  z-index: 3;
   padding: 0px 40px;
   display: flex;
   -webkit-box-align: center;
@@ -83,7 +83,7 @@ nav img {
 }
 
 .ContactNav {
-  position: absolute;
+  position: fixed;
   top: calc(100% - 60px);
   z-index: 1;
   background: rgba(37, 37, 46, 0.8);
@@ -135,6 +135,10 @@ nav img {
 }
 
 @media screen and (max-width: 500px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
   .About h1 {
     line-height: 50px;
     font-size: 40px;

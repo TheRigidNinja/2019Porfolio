@@ -28,10 +28,13 @@ export default function ProjectBox({Tech,Header,Details,FilterCommands}) {
             return <>{Technologies}</>
         }
 
+        var backSRC = {"backgroundImage": "url("+Details.IMG+")"}
+
         return (
         <div className="Box col-md-6 col-sm-12">
             <div className="Description">
-                <img src={Details.IMG} alt="Project"/>
+                <span className="imgBox" style={backSRC}></span>
+                {/* <img src={Details.IMG} alt="Project"/> */}
                 <div>
                     <a href={Details.Source} target="_blank" rel="noopener noreferrer">Source</a>
                     <a href={Details.Launch} target="_blank" rel="noopener noreferrer" className="Launch">Launch</a>

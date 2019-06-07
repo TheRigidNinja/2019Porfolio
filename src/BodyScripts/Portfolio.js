@@ -21,7 +21,7 @@ export default class Portfolio extends Component {
     var nav = document.querySelector("nav"),
     img = document.querySelector("nav img");
     
-    if(e.target.scrollTop >= 145){
+    if(e.target.scrollTop >= 80){
       nav.style.height="100px"
       nav.style.top="0px"
       img.style.margin="0px 0px 0px 0px"
@@ -41,7 +41,7 @@ export default class Portfolio extends Component {
 
         <nav>
           <Link to="/Projects">Projects</Link>
-          <Link to="/About"><img src={LogoB} alt="Logo"/></Link>
+          <Link to="/About"><img src={LogoB} alt="Logo" className="logo"/></Link>
           <Link to="/About">About</Link>
         </nav>
         <Link to="/Contact" className="ContactNav">Get In Touch</Link>

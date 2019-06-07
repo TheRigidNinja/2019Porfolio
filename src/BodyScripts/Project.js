@@ -74,14 +74,23 @@ export default class Project extends Component{
 
         <div className="row Project">
         
-          <ProjectBox Tech={["Node.js (Express, Socket.io)","HTML","CSS (Flexbox)","Firebase-FireStore"]}
+          <ProjectBox Tech={["Node.js","HTML5","SASS (Flexbox)","Firebase-Auth","React/Redux","MySQL"]}
           FilterCommands = {this.state.filterObj}
           Details={[{
-            "Header":"Chat-App",
+            "Header":"Chatome",
             "Launch":"https://chatappe.herokuapp.com/",
-            "Source":"https://github.com/TheRigidNinja/Chat-App",
+            "Source":"https://github.com/TheRigidNinja/Chatome",
             "IMG":ChatApp,
-            "Description":"An online chat application.  The aim was to use messenger as inspiration. And in the process, I get to learn different programming concepts."}]}/>
+            "Description":"A chat application.  I was motivated to make it because i aimed to put everything I had learned to practice. "}]}/>
+              
+          <ProjectBox Tech={["React/Redux","jQuery","HTML","CSS","Material Ui", "Firebase-FireStore"]}
+          FilterCommands = {this.state.filterObj}
+          Details={[{
+            "Header":"TODO'S",
+            "Launch":"https://therigidninja.firebaseapp.com/",
+            "Source":"https://github.com/TheRigidNinja/React_TodoList/tree/Todo's-Adcanced/todo_app",
+            "IMG":Todos,
+            "Description":"A simple Todo's web app."}]}/>
 
           <ProjectBox Tech={["Sass (Flexbox)","jQuery","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -91,15 +100,6 @@ export default class Project extends Component{
             "Source":"https://github.com/TheRigidNinja/App-landing-page",
             "IMG":Applanding,
             "Description":"An app landing page. I made it to practice, translating mockups designs, to HTML CSS code."}]}/>
-              
-          <ProjectBox Tech={["React/Redux","jQuery","HTML","CSS","Material Ui", "Firebase-FireStore"]}
-          FilterCommands = {this.state.filterObj}
-          Details={[{
-            "Header":"TODO'S",
-            "Launch":"https://therigidninja.firebaseapp.com/",
-            "Source":"https://github.com/TheRigidNinja/React_TodoList/tree/Todo's-Adcanced/todo_app",
-            "IMG":Todos,
-            "Description":"A simple todo app. "}]}/>
 
           <ProjectBox Tech={["CSS","JavaScript","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -126,7 +126,7 @@ export default class Project extends Component{
             "Launch":"https://therigidninja.github.io/PizzaWebsite/",
             "Source":"https://github.com/TheRigidNinja/PizzaWebsite",
             "IMG":Pizza,
-            "Description":"The aim was to improve my knowledge, skills in CSS Flexbox and the general way I style elements."}]}/>
+            "Description":"The aimed was to improve my knowledge, skills in CSS Flexbox and the general way I style elements. As a result i made this Pizza website to reflect on it."}]}/>
 
           <ProjectBox Tech={["CSS","JavaScript","HTML"]}
           FilterCommands = {this.state.filterObj}
@@ -153,8 +153,7 @@ export default class Project extends Component{
             "Launch":"https://old-portfolio-998bc.firebaseapp.com/Inventory-System/index.html",
             "Source":"https://github.com/TheRigidNinja/VideoProduction",
             "IMG":VidoeProduction,
-            "Description":"A web app that helps teachers and students with the process of borrowing video production equipments."+
-            "It communicates to an excel sheet to give teachers updates on students that have borrowed production equipment."}]}/>
+            "Description":"A web app that helps teachers and students with the process of borrowing video production equipments."}]}/>
 
           <ProjectBox Tech={["Python","C# (Bunifu ui)"]}
           FilterCommands = {this.state.filterObj}
@@ -172,7 +171,7 @@ export default class Project extends Component{
             "Launch":"##",
             "Source":"https://github.com/TheRigidNinja/2019Porfolio",
             "IMG":ThisPortfolio,
-            "Description":"You looking at it (^^;)"}]}/>
+            "Description":"You looking at it 😁"}]}/>
       
           <ProjectBox Tech={["JavaScript","HTML","CSS"]}
           FilterCommands = {this.state.filterObj}
