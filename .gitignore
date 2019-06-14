@@ -8,6 +8,8 @@
 
 # production
 /build
+/FireBaseFiles
+
 
 # misc
 .DS_Store

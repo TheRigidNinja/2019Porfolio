@@ -13,13 +13,11 @@ a
     font-size: 20px
     display: block
 
-    &:hover
+    &:hover,&:active
         color: #e91e63
         text-decoration: line-through
         letter-spacing: 10px
 
-    &:active
-        transform: scale(.95)
         
 button
     transition: all cubic-bezier(.99,-0.73,.55,1.47) 0.3s
@@ -32,16 +30,12 @@ button
     border: none
     margin-top: 30px
 
-button:hover
+button:hover,button:active
     letter-spacing: 5px
     box-shadow: 0px 5px 10px rgba(57, 193, 188,.2)
 
 button:focus
     outline: none
-
-button:active
-    transition: all linear .1s
-    transform: scale(.95,.95)
 
 
 nav
@@ -58,17 +52,32 @@ nav
     top: 50px
 
     img
+        transition: all .1s
         width: 80px
         margin-top: 30px
 
 
 .ContactNav
+    transition: all .3s
     position: fixed
     top: calc(100% - 60px)
     z-index: 1
+    display: flex
+    flex-flow: row nowrap
     background: rgba(37,37,46,.8)
     border-radius: 0px 10px 0px 0px
     padding: 15px 40px
+    left: -170px
+
+.fa-arrow-right
+    transform-origin: center
+    position: relative
+    color: white 
+    left: 25px
+    font-size: 25px
+    top: -10px
+    padding: 15px 20px
+    margin: 0px
 
 #root
     height: 100%
@@ -87,7 +96,7 @@ nav
     padding: 10px 20px
     border-bottom: 1px solid rgba(255,255,255,.2)
 
-.more:hover
+.more:hover,.more:active
     box-shadow: none
     background: rgba(0,0,0,.1)
     
@@ -100,7 +109,8 @@ nav
 
 .aboutBtn
     position: absolute
-    top: calc(100% - 240px)
+    left: calc(50% - 90px)
+    top: calc(100% - 180px)
 
     a:active
         transform: scale(1)
@@ -110,7 +120,10 @@ nav
         width: 60px
         height: 60px
 
-    .About 
+    .About
+        margin-top: 60px
+        margin-bottom: 80px 
+        padding: 20px
         h1
             line-height: 50px
             font-size: 40px
@@ -124,14 +137,15 @@ nav
                 margin-top: -50px
 
     .Contact
-        margin-top: 20px
+        margin-top: 120px
+        margin-bottom: 80px
         
         h1,.fa-envelope-open-text
             font-size: 30px
             margin: 10px
         p 
             font-size: 16px
-    a:hover
+    a:hover,a:active
         color: #e91e63
         text-decoration: line-through
         letter-spacing: 5px

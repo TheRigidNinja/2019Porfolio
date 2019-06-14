@@ -16,15 +16,10 @@ a {
   display: block;
 }
 
-a:hover {
+a:hover, a:active {
   color: #e91e63;
   text-decoration: line-through;
   letter-spacing: 10px;
-}
-
-a:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 button {
@@ -40,7 +35,7 @@ button {
   margin-top: 30px;
 }
 
-button:hover {
+button:hover, button:active {
   letter-spacing: 5px;
   -webkit-box-shadow: 0px 5px 10px rgba(57, 193, 188, 0.2);
           box-shadow: 0px 5px 10px rgba(57, 193, 188, 0.2);
@@ -48,13 +43,6 @@ button:hover {
 
 button:focus {
   outline: none;
-}
-
-button:active {
-  -webkit-transition: all linear .1s;
-  transition: all linear .1s;
-  -webkit-transform: scale(0.95, 0.95);
-          transform: scale(0.95, 0.95);
 }
 
 nav {
@@ -78,17 +66,41 @@ nav {
 }
 
 nav img {
+  -webkit-transition: all .1s;
+  transition: all .1s;
   width: 80px;
   margin-top: 30px;
 }
 
 .ContactNav {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   position: fixed;
   top: calc(100% - 60px);
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   background: rgba(37, 37, 46, 0.8);
   border-radius: 0px 10px 0px 0px;
   padding: 15px 40px;
+  left: -170px;
+}
+
+.fa-arrow-right {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  position: relative;
+  color: white;
+  left: 25px;
+  font-size: 25px;
+  top: -10px;
+  padding: 15px 20px;
+  margin: 0px;
 }
 
 #root {
@@ -110,7 +122,7 @@ nav img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.more:hover {
+.more:hover, .more:active {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: rgba(0, 0, 0, 0.1);
@@ -126,7 +138,8 @@ nav img {
 
 .aboutBtn {
   position: absolute;
-  top: calc(100% - 240px);
+  left: calc(50% - 90px);
+  top: calc(100% - 180px);
 }
 
 .aboutBtn a:active {
@@ -138,6 +151,11 @@ nav img {
   .logo {
     width: 60px;
     height: 60px;
+  }
+  .About {
+    margin-top: 60px;
+    margin-bottom: 80px;
+    padding: 20px;
   }
   .About h1 {
     line-height: 50px;
@@ -153,7 +171,8 @@ nav img {
     margin-top: -50px;
   }
   .Contact {
-    margin-top: 20px;
+    margin-top: 120px;
+    margin-bottom: 80px;
   }
   .Contact h1, .Contact .fa-envelope-open-text {
     font-size: 30px;
@@ -162,7 +181,7 @@ nav img {
   .Contact p {
     font-size: 16px;
   }
-  a:hover {
+  a:hover, a:active {
     color: #e91e63;
     text-decoration: line-through;
     letter-spacing: 5px;

@@ -7,8 +7,7 @@
     justify-content: center
     margin: 0px
     padding: 0px
-    overflow: scroll !important
-    -webkit-overflow-scrolling: touch
+    touch-action: touch
 
 .Box
     position: relative
@@ -33,7 +32,11 @@
         position: absolute
         text-align: center
         background: rgba(0,0,0,0.7)
-        padding: 0px 10px
+        padding: 20px 10px
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
         
     
     .imgBox
@@ -62,7 +65,7 @@
         transform: scale(.5)
         opacity: 0
 
-    &:hover div
+    &:hover div,&:active div
         transform: scale(1) 
         opacity: 1
 
@@ -88,7 +91,7 @@
         font-weight: bold
         display: inline-block
 
-        &:hover
+        &:hover,&:active
             color: #e91e63
 
 
@@ -104,11 +107,12 @@
         position: relative
         color: white
         padding: 3px 15px
-        border-radius: 20px
+        border-radius: 5px
         font-size: 18px
         margin: 2px
         font-weight: bold
         display: inline-block
+        background: rgba(255,255,255,.08)
 
         &:hover
             color: rgb(50,230,151)
