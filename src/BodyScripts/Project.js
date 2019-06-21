@@ -98,7 +98,7 @@ export default class Project extends Component {
             Details={[
               {
                 Header: "Chatome",
-                Launch: "https://chatappe.herokuapp.com/",
+                Launch: "https://chatapp-66db3.firebaseapp.com",
                 Source: "https://github.com/TheRigidNinja/Chatome",
                 IMG: ChatApp,
                 Description:
