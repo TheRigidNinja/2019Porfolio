@@ -1,5 +1,19 @@
 {
   "hosting": {
+    "rewrites": [{
+        "source": "/About",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/Projects",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/Contact",
+        "destination": "/index.html"
+      }
+    ],
+
     "public": "public",
     "ignore": [
       "firebase.json",

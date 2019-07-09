@@ -1,109 +1,195 @@
 import React, { Component } from "react";
-import LogoB from "../IMG/LogoW.svg";
+import LogoB from "../IMG/LogoB.svg";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Project from "./Project";
-import Contact from "./Contact";
 import About from "./About";
+import FeedBack from "./FeedbackSection/Feedback";
 
 export default class Portfolio extends Component {
   state = {
-    styleLeft: {
-      left: "-180px"
+    filterStyle: {
+      display: "block"
     },
-    styleRotate: {
-      transform: "rotateZ(0deg)"
-    }
+    searchStyle: {
+      height: "100%"
+    },
+    currentActive: "?",
+    mouseState: null,
+    searchFilter: "",
+    filterTagStyle: {
+      display: "none"
+    },
+    activeFilter: null
   };
 
   componentDidMount() {
-    var elm = document.getElementById("root");
-    elm.addEventListener("scroll", e => this.handleMenuDrop(e));
+    this.handleMenu();
 
+    // Handles drag scroll on filter tags
+    const slider = document.querySelector(".filters");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-    elm.addEventListener("click", event => {
-      if (event.target.className !== "fas fa-arrow-right") {
-        this.toggleLeft(event, "window");
-      }
+    slider.addEventListener("mousedown", e => {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
     });
 
-    elm.addEventListener("scroll", event => {
-      if (event.target.className !== "fas fa-arrow-right") {
-        this.toggleLeft(event, "window");
-      }
-    });
-
-    elm.addEventListener("touchstart", event => {
-      if (event.target.className !== "fas fa-arrow-right") {
-        this.toggleLeft(event, "window");
-      }
+    slider.addEventListener("mouseleave", () => (isDown = false));
+    slider.addEventListener("mouseup", () => (isDown = false));
+    slider.addEventListener("mousemove", e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = x - startX; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
     });
   }
 
-  // Check scroll
-  handleMenuDrop = e => {
-    var nav = document.querySelector("nav"),
-      img = document.querySelector("nav img");
+  // Toggles search filters
+  handleMenu = event => {
+    var windowPath = window.location.pathname.replace("/", "");
 
-    if (e.target.scrollTop >= 80) {
-      nav.style.height = "75px";
-      nav.style.top = "0px";
-      img.style.margin = "0px 0px 0px 0px";
-      img.style.width = "50px";
-    } else {
-      nav.style.height = "0px";
-      nav.style.top = "50px";
-      img.style.margin = "30px 0px 0px 0px";
-      img.style.width = "80px";
+    if (["Project", "Contact", "About"].includes(windowPath)) {
+      var filterDisp = "none",
+        searchStyle = "0px";
+
+      if (windowPath === "Contact") {
+        this.handleContactPage();
+      }
+
+      if (windowPath === "Project") {
+        filterDisp = "block";
+        searchStyle = "100%";
+      }
+
+      // Sets to active button
+      document.getElementById(windowPath).className = "activeButton";
+
+      // Remove Prov Class
+      if (
+        this.state.currentActive !== "?" &&
+        this.state.currentActive !== windowPath
+      ) {
+        document
+          .querySelector("#" + this.state.currentActive)
+          .removeAttribute("class", "activeButton");
+      }
+
+      this.setState({
+        filterStyle: {
+          display: filterDisp
+        },
+        searchStyle: {
+          height: searchStyle
+        },
+        currentActive: windowPath
+      });
     }
   };
 
-  toggleLeft = (event, action) => {
-    if (
-      (action === "window" && this.state.styleLeft.left === "0px") ||
-      event.target.className === "fas fa-arrow-right"
-    ) {
-      var left = this.state.styleLeft.left === "-180px" ? "0px" : "-180px",
-        rotate =
-          this.state.styleRotate.transform === "rotateZ(0deg)"
-            ? "rotateZ(180deg)"
-            : "rotateZ(0deg)";
+  // Handles Search Filter
+  handleSearchFilter = e => {
+    var htmlInfo = e !== "Remove" ? e.target.innerHTML : "",
+      style = e !== "Remove" ? "flex" : "none",
+      activeFilter = e.target;
+
+    if (!/</g.test(htmlInfo) || e === "Remove") {
+      if (e !== "Remove") {
+        activeFilter.setAttribute("class", "activeFilter");
+      }
+
+      if (this.state.activeFilter) {
+        this.state.activeFilter.removeAttribute("class", "activeFilter");
+      }
+
       this.setState({
-        styleLeft: {
-          left: left
-        },
-        styleRotate: {
-          transform: rotate
-        }
+        searchFilter: htmlInfo,
+        filterTagStyle: { display: style },
+        activeFilter: activeFilter
       });
     }
+  };
+
+  // Handles navigates to contact section whenever pressing on contact button
+  handleContactPage = () => {
+    var elm = document.querySelector("#root"),
+      contElm;
+    elm.scrollTop = elm.scrollHeight;
+
+    setTimeout(() => {
+      contElm = document.querySelector("#contact");
+      contElm.setAttribute("class", "contactActive");
+    }, 100);
+
+    setTimeout(() => {
+      contElm.removeAttribute("class", "contactActive");
+    }, 2000);
   };
 
   render() {
     return (
       <BrowserRouter>
         <nav>
-          <Link to="/Projects">Projects</Link>
-          <Link to="/About">
-            <img src={LogoB} alt="Logo" className="logo" />
-          </Link>
-          <Link to="/About">About</Link>
+          <img src={LogoB} />
+          <div className="searchFilter">
+            <div className="Search" style={this.state.searchStyle}>
+              <input type="search" placeholder="Search" />
+              <i className="fas fa-search" />
+              <span
+                id="filterTag"
+                style={this.state.filterTagStyle}
+                onClick={() => this.handleSearchFilter("Remove")}
+              >
+                <span>{this.state.searchFilter}</span>
+              </span>
+            </div>
+            <div
+              className="Pages"
+              onClick={this.handleMenu}
+              style={this.state.pagesStyle}
+            >
+              <Link to="/Project" id="Project">
+                Project
+              </Link>
+              <Link to="/About" id="About">
+                About
+              </Link>
+              <Link to="/Contact" id="Contact" onClick={this.handleContactPage}>
+                Contact
+              </Link>
+            </div>
+          </div>
+
+          <div
+            className="filters"
+            style={this.state.filterStyle}
+            onClick={event => this.handleSearchFilter(event)}
+          >
+            <span id="data1">Games</span>
+            <span id="data2">Websites</span>
+            <span id="data3">MySql</span>
+            <span id="data4">HTML/CSS/SASS</span>
+            <span id="data5">Node.js</span>
+            <span id="data6">Web Apps</span>
+            <span id="data7">React/Redux</span>
+            <span id="data8">JavaScript/jQuery</span>
+            <span id="data9">Python</span>
+            <span id="data10">Firebase</span>
+            <span id="data11">Simulations</span>
+          </div>
         </nav>
-        <span className="ContactNav" style={this.state.styleLeft}>
-          <Link to="/Contact">Get In Touch </Link>
-          <i
-            className="fas fa-arrow-right"
-            style={this.state.styleRotate}
-            onClick={event => this.toggleLeft(event)}
-          />
-        </span>
 
         <Switch>
-          <Route path="/Projects" component={Project} />
+          <Route path="/Project" component={Project} />
           <Route path="/About" component={About} />
-          <Route path="/Contact" component={Contact} />
-          <Route path="/OldPortfolio" component={Contact} />
+          <Route path="/Contact" component={About} />
           <Route path="" component={Project} />
         </Switch>
+
+        {/* Feed back */}
       </BrowserRouter>
     );
   }

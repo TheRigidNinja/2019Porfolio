@@ -1,32 +1,38 @@
 .Project {
-  -webkit-transition: all ease-in-out .4s;
-  transition: all ease-in-out .4s;
   position: relative;
-  top: 220px;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0px;
-  padding: 0px;
   -ms-touch-action: touch;
       touch-action: touch;
+  margin-bottom: 50px;
 }
 
 .Box {
+  cursor: pointer;
   position: relative;
-  background: teal;
-  margin: 15px 15px;
-  border-radius: 2px;
-  height: 350px;
-  max-width: 380px !important;
-  background: #23242c83;
-  padding: 0px;
+  border-radius: 10px;
+  height: 400px;
+  max-width: 400px;
   overflow: hidden;
+  margin: 10px;
+  padding: 0px;
+  border: 2px solid rgba(52, 62, 75, 0.1);
+  -ms-touch-action: touch;
+      touch-action: touch;
+  background: white;
+}
+
+.Box:hover {
+  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(52, 62, 75, 0.7);
 }
 
 .Description {
@@ -37,12 +43,31 @@
 }
 
 .Description div {
+  margin: 0px;
+  padding: 10px;
   width: 100%;
   height: 100%;
   position: absolute;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  color: white;
   padding: 20px 10px;
+  display: none;
+}
+
+.Description .Launch {
+  display: none;
+}
+
+.Description .imgBox {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#activeMoreDetails {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: rgba(52, 62, 75, 0.75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,107 +81,104 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
-.Description .imgBox {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.Description a {
-  display: inline-block;
-  padding: 15px 20px;
-  margin: 5% 0px;
-  color: #32e697;
-  background: rgba(42, 69, 132, 0.7);
-  border-radius: 10px 0px 0px 10px;
-}
-
-.Description .Launch {
-  background: rgba(110, 67, 108, 0.7);
-  border-radius: 0px 10px 10px 0px;
-}
-
-.Description p {
+#activeDetails {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: rgba(52, 62, 75, 0.9);
   color: white;
 }
 
-.Description div {
-  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.4s;
-  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.4s;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  opacity: 0;
+#activeDetails span {
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.Description:hover div, .Description:active div {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
+#activeBox {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  border: 5px solid rgba(51, 154, 240, 0.8);
 }
 
 .Details {
-  text-align: center;
-  padding: 10px 0px;
+  padding: 10px;
+  height: 100%;
+}
+
+.Details:hover h2, .Details:active h2 {
+  text-decoration: underline;
+  color: #339af0;
 }
 
 .Details h2 {
-  color: white;
   font-size: 20px;
   padding-bottom: 5px;
 }
 
 .Details span {
   position: relative;
-  background: white;
-  color: #58677c;
+  border: 1px solid rgba(52, 62, 75, 0.5);
   padding: 3px 10px;
   border-radius: 20px;
   font-size: 12px;
   margin: 2px;
   font-weight: bold;
   display: inline-block;
+  first-child-margin: 0px;
 }
 
-.Details span:hover, .Details span:active {
-  color: #e91e63;
-}
-
-.FilterBar {
-  position: relative;
+.projectDetails {
+  color: #343e4b;
+  position: absolute;
+  top: calc(100% - 45px);
+  padding: 0px 10px;
   width: 100%;
-  text-align: center;
-  top: 180px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.FilterBar span {
-  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  cursor: pointer;
-  position: relative;
-  color: white;
-  padding: 3px 15px;
-  border-radius: 5px;
-  font-size: 18px;
-  margin: 2px;
+.projectDetails a {
+  text-decoration: none;
+  color: #343e4b;
+  padding: 5px 10px;
+  padding-bottom: 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.projectDetails a:hover {
+  background: rgba(52, 62, 75, 0.6);
+  color: #339af0;
+}
+
+.projectDetails i {
+  padding-right: 5px;
+  border-radius: 50%;
+}
+
+#fedCnt {
+  position: absolute;
+  border-radius: 5px 5px 0px 0px;
+  padding: 1px;
+  font-size: 9px;
+  left: calc(100% - 70px);
+  top: -12px;
+  color: #00ff0a;
   font-weight: bold;
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
 }
 
-.FilterBar span:hover {
-  color: #32e697;
-}
-
-.ActiveFilter {
-  color: #e91e63 !important;
-  text-decoration: line-through;
-  letter-spacing: 5px;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+#fedCnt:after {
+  content: "+";
 }

@@ -1,20 +1,4 @@
 .About {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.About {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -23,25 +7,197 @@
 }
 
 .About {
+  position: relative;
+  max-width: 1000px;
+  padding: 40px;
+  margin: auto;
+  font-size: 30px;
+  color: #343e4b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.About p {
+  font-weight: 400 !important;
+}
+
+.About div {
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+  margin: 8px;
+  -webkit-box-shadow: 0px 1px 3px rgba(52, 62, 75, 0.3);
+          box-shadow: 0px 1px 3px rgba(52, 62, 75, 0.3);
+  background: white;
+}
+
+.About div:last-child {
+  margin-bottom: 50px;
+}
+
+.About div:first-child {
+  background-image: url("../IMG/bg.jpg");
+  background-size: cover;
+  background-position-y: center;
+  height: 300px;
+  color: white;
+  font-weight: 500;
+}
+
+.About div:first-child img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 8px;
+  border: 5px solid #339af0;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  -ms-touch-action: touch;
+      touch-action: touch;
+}
+
+.About div:first-child img:hover {
+  padding: 2px;
+}
+
+.About div:first-child img:active {
+  border: 8px solid #339af0;
+}
+
+.more {
+  font-size: 16px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
-  -webkit-overflow-scrolling: touch;
-  overflow: hidden;
-  overflow-y: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.About h1 {
-  font-size: 60px;
-  line-height: 89.6px;
-  font-weight: 900;
+.header span:last-child {
+  font-size: 18px;
+  opacity: .8;
 }
 
-.About mark {
-  color: white;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 2px 4px;
-  border-radius: 2px;
-  font-weight: 900 !important;
+.About section {
+  margin: 10px 0px;
+}
+
+.About section .institution span, .About section .place {
+  font-size: 18px;
+  padding-right: 20px;
+  font-weight: 500;
+}
+
+.About section .place {
+  display: block;
+}
+
+.About section .institution small, .About section li:first-child {
+  opacity: .8;
+  font-size: 14px;
+  font-style: italic;
+  list-style: none;
+  padding: 10px 0px;
+}
+
+.About section p, .About section span, .About section li {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Tools span, .Hobbies span {
+  padding: 10px;
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+  background: rgba(52, 62, 75, 0.1);
+  cursor: default;
+  border: 2px solid rgba(52, 62, 75, 0.8);
+  font-weight: 450;
+}
+
+.Education {
+  padding-top: 40px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Education .Edheader {
+  position: absolute;
+  margin-top: -30px;
+}
+
+.Education section {
+  border: 1px solid rgba(52, 62, 75, 0.3);
+  padding: 10px;
+  margin: 5px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.contact a {
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: #343e4b;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 5px;
+  border: 1px solid rgba(52, 62, 75, 0.5);
+}
+
+.contact a:hover {
+  border-color: rgba(51, 154, 240, 0.5);
+  color: #339af0;
+}
+
+.contact a:active i {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+#contact {
+  border: 2px solid transparent;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.contactActive {
+  border-color: #f03e3e !important;
 }

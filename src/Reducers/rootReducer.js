@@ -1,11 +1,11 @@
     
 const InitState = {
-    handleFilterClick: Object,
+    FeedLength: Object,
 }
 
 const rootReducer = (state = InitState, action) => {
-    if (action.type === "FILTER") { 
-        return { ...InitState, handleFilterClick: action.data }; 
+    if (action.type === "FEEDLENGTH") { 
+        return { ...InitState, FeedLength: action.data }; 
     }
 }
 

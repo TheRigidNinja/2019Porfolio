@@ -1,0 +1,140 @@
+$fontWeight: 400
+$generolColor: rgb(52, 62, 75)
+$activeColor: rgb(51, 154, 240)
+
+%flexbox
+    display: flex
+    flex-flow: column
+    justify-content: flex-end
+    align-items: center
+
+
+
+.feedBackSection
+    transition: all .2s
+    position: fixed 
+    z-index: 10
+    width: 100%
+    height: 100%
+    background: rgba($generolColor,.7)
+    top: 0px
+    left: 0px
+    @extend %flexbox
+    
+.feedBACK
+    overflow: hidden !important
+    overflow-y: hidden !important
+
+
+.feedContainer
+    position: relative
+    background: white
+    top: 0px
+    height: 80%
+    width: 100%
+    border-radius: 10px 10px 0px 0px
+    overflow: hidden
+    overflow-y: scroll
+    @extend %flexbox
+    justify-content: flex-start
+    padding: 20px 10px
+    padding-top: 30px
+    padding-bottom: 50px
+    
+.innerContainer
+    width: 100%
+    max-width: 900px
+
+    section 
+        margin-bottom: 14px
+
+
+.filter
+    font-weight: 500
+    span
+        margin-right: 35px
+
+
+.comment
+    .wordCnt
+        @extend %flexbox
+        flex-flow: row nowrap
+        justify-content: space-between
+        width: 100%
+        margin: 0px
+
+    span
+        font-weight: 500
+        opacity: .7
+
+    textarea
+        font-size: 15px
+        width: 100%
+        padding: 5px 10px
+        min-height: 30px
+        max-height: 200px
+        height: 200px
+        border: 0px solid transparent
+        outline: none
+        border-bottom: 2px solid rgba($generolColor,.7)
+        background-image: url("../IMG/linedpaper.png")
+
+    div
+        margin-top: 10px
+    
+
+.peopleFeedback
+    width: 100%
+    @extend %flexbox
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: start
+    border-radius: 5px
+    box-shadow: 0px 2px 3px rgba($generolColor,.3)
+
+    img
+        width: 60px
+        height: 60px 
+        border-radius: 43px 38px 45px 48px
+        margin-top: 16px
+        
+
+    div 
+        margin: 5px
+    
+    .vote
+        touch-action: touch
+        @extend %flexbox
+        font-size: 18px 
+        font-weight: 700
+        color: $generolColor
+        cursor: pointer
+        justify-content: flex-start
+
+        small
+            font-size: 18px 
+            font-weight: 700
+        i 
+            padding: 5px
+            border-radius: 3px
+        
+        i:active
+            transform: scale(1.1)
+
+        i:last-child:hover
+            background: rgba($generolColor,.3)
+            color: rgb(240, 62, 62)
+        
+        i:first-child:hover
+            background: rgba($generolColor,.3)
+            color: $activeColor
+
+.personComment
+    height: 100%
+    width: 100%
+    margin: 0px 
+    padding: 0px 10px
+    padding-top: 10px 
+
+.peopleCommentBox
+    margin-top: 50px

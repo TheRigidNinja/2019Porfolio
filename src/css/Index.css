@@ -1,83 +1,105 @@
 body {
-  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  color: #25252e;
+  overflow: hidden;
+  word-spacing: 3px;
+}
+
+body::before {
+  content: "";
   width: 100%;
   height: 100%;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  overflow: hidden !important;
+  position: absolute;
+  top: 0px;
+  opacity: .08;
+  background-image: url("../IMG/ImgPatterns.svg");
 }
 
-a {
-  -webkit-transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  transition: all cubic-bezier(1, -0.22, 0.38, 0.86) 0.2s;
-  text-decoration: none;
-  color: #32e697;
-  font-size: 20px;
-  display: block;
+#root {
+  position: absolute;
+  max-width: 1500px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
-a:hover, a:active {
-  color: #e91e63;
-  text-decoration: line-through;
-  letter-spacing: 10px;
-}
-
-button {
-  -webkit-transition: all cubic-bezier(0.99, -0.73, 0.55, 1.47) 0.3s;
-  transition: all cubic-bezier(0.99, -0.73, 0.55, 1.47) 0.3s;
-  background-color: #39c1bc;
-  background-color: #39c1bc;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 15px 60px;
-  border: none;
-  margin-top: 30px;
-}
-
-button:hover, button:active {
-  letter-spacing: 5px;
-  -webkit-box-shadow: 0px 5px 10px rgba(57, 193, 188, 0.2);
-          box-shadow: 0px 5px 10px rgba(57, 193, 188, 0.2);
-}
-
-button:focus {
-  outline: none;
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 nav {
   width: 100%;
-  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 3;
-  padding: 0px 40px;
-  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 0px 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 0px;
-  background: #25252e;
-  top: 50px;
 }
 
 nav img {
-  -webkit-transition: all .1s;
-  transition: all .1s;
-  width: 80px;
-  margin-top: 30px;
+  width: 65px;
+  margin: 30px 0px;
 }
 
-.ContactNav {
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  position: fixed;
-  top: calc(100% - 60px);
-  z-index: 1;
+.searchFilter {
+  position: relative;
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 15px;
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.searchFilter .Search {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.searchFilter .Search input {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 0px;
+  border: 0px solid transparent;
+  outline: 0px;
+  color: #343e4b;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+}
+
+.searchFilter .Search i {
+  position: absolute;
+  padding: 13.5px;
+  left: calc(100% - 50px);
+  width: 100%;
+  cursor: pointer;
+  border-radius: 20px 0px 0px 20px;
+  background: #343e4b;
+  color: white;
+}
+
+.searchFilter .Search i:hover {
+  background: #339af0;
+}
+
+.Pages {
+  -webkit-transition: all .2s;
+  transition: all .2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,106 +107,153 @@ nav img {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  background: rgba(37, 37, 46, 0.8);
-  border-radius: 0px 10px 0px 0px;
-  padding: 15px 40px;
-  left: -170px;
+  width: 100%;
+  background: white;
+  padding: 0px 20px;
 }
 
-.fa-arrow-right {
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  position: relative;
-  color: white;
-  left: 25px;
-  font-size: 25px;
-  top: -10px;
+.Pages a {
+  padding: 10px 0px;
+  text-decoration: none;
+  margin-right: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+  border-bottom: 3px solid transparent;
+  color: #343e4b;
+}
+
+.Pages a:hover {
+  border-color: rgba(52, 62, 75, 0.8);
+}
+
+.activeButton {
+  color: #339af0 !important;
+  border-color: #339af0 !important;
+}
+
+.filters {
+  padding: 30px 20px;
+  margin-top: 20px;
+  width: 98%;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.filters:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.filters span {
+  background: white;
   padding: 15px 20px;
   margin: 0px;
-  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 30px;
+  border: 2px solid rgba(52, 62, 75, 0.2);
+  font-weight: 400;
 }
 
-#root {
-  height: 100%;
-  width: 100%;
-  background-image: url("../IMG/Backg.svg"), linear-gradient(45deg, #6e436c 25%, #2a4584 75%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+.filters span:hover, .filters span:active {
+  border-color: rgba(52, 62, 75, 0.8);
+  background: rgba(52, 62, 75, 0.1);
 }
 
-.more {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(0, 0, 0, 0.04);
-  margin-top: 100px;
-  padding: 10px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.activeFilter {
+  background: rgba(51, 154, 240, 0.1) !important;
+  border-color: #339af0 !important;
 }
 
-.more:hover, .more:active {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.ConnectLines {
-  position: relative;
-  background: rgba(255, 255, 255, 0.2);
-  width: 1px;
-  height: 100px;
-  left: 50%;
-}
-
-.aboutBtn {
+#filterTag {
   position: absolute;
-  left: calc(50% - 90px);
-  top: calc(100% - 180px);
+  width: 100%;
+  height: 0px;
+  left: 0px;
+  top: 3.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: -60px;
 }
 
-.aboutBtn a:active {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+#filterTag span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: #343e4b;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid #339af0;
+  font-weight: 500;
 }
 
-@media screen and (max-width: 500px) {
-  .logo {
-    width: 60px;
-    height: 60px;
+#filterTag span:hover {
+  text-decoration: line-through;
+  background: rgba(52, 62, 75, 0.1);
+}
+
+@media screen and (max-width: 900px) {
+  .searchFilter {
+    position: relative;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .searchFilter {
+    width: 100%;
+  }
+  .filters {
+    padding: 30px 0px;
+    margin-left: -20px;
   }
   .About {
-    margin-top: 60px;
-    margin-bottom: 80px;
-    padding: 20px;
+    padding: 40px 10px;
   }
-  .About h1 {
-    line-height: 50px;
-    font-size: 40px;
+  .About div {
+    width: 100%;
   }
-  .About p {
-    font-size: 14px;
+  #filterTag span {
+    max-width: 100px;
   }
-  .About mark, .About h3 {
-    font-size: 16px;
+}
+
+@media screen and (max-width: 700px) {
+  .Education section {
+    width: 100%;
   }
-  .About .Intro {
-    margin-top: -50px;
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .Contact {
-    margin-top: 120px;
-    margin-bottom: 80px;
-  }
-  .Contact h1, .Contact .fa-envelope-open-text {
-    font-size: 30px;
-    margin: 10px;
-  }
-  .Contact p {
-    font-size: 16px;
-  }
-  a:hover, a:active {
-    color: #e91e63;
-    text-decoration: line-through;
-    letter-spacing: 5px;
-  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }
