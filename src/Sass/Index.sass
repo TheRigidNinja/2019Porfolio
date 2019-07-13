@@ -51,14 +51,23 @@ nav
         margin: 30px 0px
 
 
-.searchFilter
+.searchFilterCont
     position: relative
     width: 50%
+
+.searchFilter
+    background: orange
+    position: relative
+    width: 100%
     border-radius: 10px
-    overflow: hidden
     font-size: 15px 
     box-shadow: 0px 1px 5px rgba(0,0,0,0.2)
-
+    overflow: hidden
+    // button
+    //     position: absolute
+    //     background: orange 
+        // width: 100%
+        
     .Search
         position: relative
         width: 100%
@@ -66,6 +75,8 @@ nav
 
         input
             padding: 10px 20px
+            padding-right: 70px
+            text-overflow: ellipsis  
             width: 100%
             border-radius: 0px
             border: 0px solid transparent 
@@ -74,11 +85,20 @@ nav
             border-bottom: 1px solid rgba(0,0,0,0.1)
             font-weight: $fontWeight
         
+
         i 
             position: absolute
-            padding: 13.5px
+            margin: -8px
+            font-size: 20px
+            // padding: 0px
+            
+        button
+            position: absolute
             left: calc(100% - 50px)
-            width: 100%
+            height: 100%
+            width: 50px
+            outline: none
+            border: 0px solid transparent
             cursor: pointer
             border-radius: 20px 0px 0px 20px
             background: $generolColor
@@ -86,6 +106,7 @@ nav
 
             &:hover 
                 background: $activeColor
+
 
 .Pages
     transition: all .2s
@@ -178,15 +199,49 @@ nav
             background: rgba($generolColor,.1)
 
 
+// Search Results 
+.searchResults
+    position: absolute
+    width: 100%
+    max-height: 234px
+    z-index: 10
+    list-style: none
+    border-radius: 0px 0px 10px 10px
+    overflow: hidden
+    overflow-y: scroll
+    padding-left: 0px
+    margin-top: -45px
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2)
+
+    li 
+        border-bottom: 1px solid rgba($generolColor,.1)
+        cursor: pointer
+        padding: 11px 20px
+        width: 100%
+        background: white 
+        overflow: hidden
+        text-overflow: ellipsis
+        display: block
+        white-space: nowrap
+
+        &:hover
+            color: $activeColor
+
+    li:last-child 
+        border-bottom: 0px solid transparent
+
+#notFound
+    text-align: center
+
 
 
 @media screen and (max-width: 900px)
-    .searchFilter
+    .searchFilterCont
         position: relative
         width: 80%
 
 @media screen and (max-width: 600px)
-    .searchFilter
+    .searchFilterCont
         width: 100%
 
     .filters

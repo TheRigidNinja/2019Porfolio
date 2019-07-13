@@ -1,28 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 
-var objIndex = null,
-  commentLen = {};
+var commentLen = {};
 
-function ProjectBox({ Tech, Details, ProjectElment }) {
+function ProjectBox({ Tech, Details, ProjectElment, FeedBack, SelectedClass }) {
+  let backSRC = { backgroundImage: "url(" + Details.IMG + ")" },
+    feedID = Details.Header.toLocaleLowerCase().replace(/\s/g, ""),
+    comment = commentLen[feedID] ? commentLen[feedID] : 0;
 
   const Technologies = () => {
-    console.log(Tech == "undefined");
-    return <></>;
-
-    // Tech.map(tech => <span key={Math.random()}>{tech}</span>)
+    if (Tech) {
+      return Tech.map(tech => <span key={Math.random()}>{tech}</span>);
+    } else {
+      console.log("Something is wrong in Tech", Tech);
+      return <></>;
+    }
   };
-
-  let backSRC = { backgroundImage: "url(" + Details.IMG + ")" },
-    feedID = (Details.Header + Details.indexNum)
-      .toLocaleLowerCase()
-      .replace(/\s/g, "");
-
-  let comment = commentLen[feedID] ? commentLen[feedID] : 0;
 
   return (
     <div
       className="Box col-md-6 col-sm-12"
+      id={SelectedClass?"SelectedBox":""}
       onClick={event => ProjectElment(event, Details.indexNum)}
     >
       <div className="Description">
@@ -47,7 +45,7 @@ function ProjectBox({ Tech, Details, ProjectElment }) {
               Launch
             </a>
 
-            <a href="##" className="Feedback">
+            <a href="##" className="Feedback" onClick={() => FeedBack(feedID)}>
               <i className="fas fa-comment-alt" />
               <small id="fedCnt">{comment}</small>
               Feedback
@@ -57,7 +55,7 @@ function ProjectBox({ Tech, Details, ProjectElment }) {
       </div>
       <div className="Details">
         <h2>{Details.Header}</h2>
-        {/* <Technologies /> */}
+        <Technologies />
       </div>
     </div>
   );
@@ -67,6 +65,7 @@ const mapStateToProps = state => {
   if (state) {
     commentLen = state.FeedLength;
   }
+
   return {};
 };
 

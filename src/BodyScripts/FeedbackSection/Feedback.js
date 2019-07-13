@@ -60,7 +60,6 @@ class Feedback extends Component {
         this.handlesPropsFeedLength();
 
         // Sets up and triggers a post request to firebase
-
         this.postDataToFirebase({ [feedID]: commentInfo });
       }
     );
@@ -94,8 +93,6 @@ class Feedback extends Component {
   };
 
   postDataToFirebase = data => {
-    console.log("Posting", data);
-
     let objKey = Object.keys(data)[0];
     db.collection("MyFeedBack")
       .doc(objKey)
@@ -139,7 +136,7 @@ class Feedback extends Component {
                 <small>{0}</small>
                 <i className="fas fa-arrow-down" />
               </div>
-              <img src={anonymousIMG} />
+              <img src={anonymousIMG} alt="Anonymous User" />
               <div className="personComment">
                 <p>{data.comment}</p>
                 <small>Posted {TimeHandler(data.time)}</small>
@@ -153,12 +150,18 @@ class Feedback extends Component {
     };
 
     return (
-      <div className="FeedBackClass">
+      <div
+        className="FeedBackClass"
+        onClick={event => {
+          if (event.target.classList[0] === "FeedBackClass") {
+            this.props.FeedBack("Remove");
+          }
+        }}
+      >
         <div className="feedContainer">
           <div className="innerContainer">
             <section className="filter">
               <span>{commentLen} Comments</span>
-
               <div className="form-check form-check-inline">
                 <input
                   className="form-check-input"
@@ -183,6 +186,11 @@ class Feedback extends Component {
                   Oldest
                 </label>
               </div>
+
+              <i
+                className="fas fa-times"
+                onClick={() => this.props.FeedBack("Remove")}
+              />
             </section>
 
             <section className="comment">

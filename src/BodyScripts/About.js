@@ -2,17 +2,18 @@ import React from "react";
 import "../css/About.css";
 import myPic from "../IMG/myPic.jpeg";
 
-
-function handleRelocate(){
-  window.open("https://www.linkedin.com/in/brian-shisanya-7a5a6516a/","_blank")
+function handleRelocate() {
+  window.open(
+    "https://www.linkedin.com/in/brian-shisanya-7a5a6516a/",
+    "_blank"
+  );
 }
 
 export default function About() {
-
   return (
     <div className="About">
       <div className="header">
-        <img src={myPic} onClick={()=>handleRelocate()}/>
+        <img src={myPic} onClick={() => handleRelocate()} alt="MyPic" />
         <span>Brian Shisanya</span>
         <span>Self-taught Developer</span>
       </div>
@@ -21,15 +22,18 @@ export default function About() {
       <div>
         <span>About me</span>
         <section>
-        <p>
-          Self-driven passionate front-end developer with 2+ years in HTML5,
-          CSS3, JavaScript, jQuery and 1-year experience in React-Redux,
-          Node.js, Boostrap4, ExpressJS, Sass, Unit testing. *Knowledge on PHP
-          and MySQL. I have a strong sense of aesthetics and user interaction
-        </p>
-        <a href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/" className="more">
-          More detail...
-        </a>
+          <p>
+            Self-driven passionate front-end developer with 2+ years in HTML5,
+            CSS3, JavaScript, jQuery and 1-year experience in React-Redux,
+            Node.js, Boostrap4, ExpressJS, Sass, Unit testing. *Knowledge on PHP
+            and MySQL. I have a strong sense of aesthetics and user interaction
+          </p>
+          <a
+            href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
+            className="more"
+          >
+            More detail...
+          </a>
         </section>
       </div>
 
@@ -149,37 +153,42 @@ export default function About() {
             touch with me. Use the links below or find other ways necessary; I
             won't miss it!
           </p>
-          <a href="https://github.com/TheRigidNinja?tab=repositories" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-            <a href="https://codepen.io/minotauro49" target="_blank" rel="noopener noreferrer"><i className="fab fa-codepen"></i></a>
-            <a href="http://bit.ly/2H1j3H1" target="_blank"  rel="noopener noreferrer"><i className="far fa-address-card"></i></a>
-            <a href="mailto:brian.shisanya2000@gmail.com"><i className="fas fa-envelope"></i></a>
-            <a href="tel:0416047871"><i className="fas fa-phone"></i></a>
+          <a
+            href="https://github.com/TheRigidNinja?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-linkedin" />
+          </a>
+          <a
+            href="https://codepen.io/minotauro49"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-codepen" />
+          </a>
+          <a
+            href="http://bit.ly/2H1j3H1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="far fa-address-card" />
+          </a>
+          <a href="mailto:brian.shisanya2000@gmail.com">
+            <i className="fas fa-envelope" />
+          </a>
+          <a href="tel:0416047871">
+            <i className="fas fa-phone" />
+          </a>
         </section>
       </div>
-
-      {/* <div className="Intro">
-        <h1>I love to build things!</h1>
-        <span>
-          I'm Brian, a self-taught <mark>developer</mark>. I'm committed to{" "}
-          <mark>UX</mark>, <mark>Robotics</mark>,
-          <mark> Web and Software Development</mark>.
-        </span>
-        <span>
-          {" "}
-          I believe in <mark>Entrepreneurship</mark>. I strive to make
-        </span>
-        <span>
-          a difference in <mark>Software and Robotics</mark>.
-        </span>
-      </div>
-
-      <div className="aboutBtn">
-        <a href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/">
-          <button className="text-light more">More About me?</button>
-        </a>
-        <div className="ConnectLines" />
-      </div>*/}
     </div>
   );
 }

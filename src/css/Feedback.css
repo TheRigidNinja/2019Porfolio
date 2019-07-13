@@ -44,7 +44,7 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 20px 10px;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -174,4 +174,20 @@
 
 .peopleCommentBox {
   margin-top: 50px;
+}
+
+.fa-times {
+  position: absolute;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  background: #343e4b;
+  color: white;
+  left: calc(100% - 60px);
+  top: 15px;
+}
+
+.fa-times:hover {
+  color: #f03e3e;
 }

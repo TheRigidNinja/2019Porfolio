@@ -182,3 +182,7 @@
 #fedCnt:after {
   content: "+";
 }
+
+#SelectedBox {
+  border-color: #155592;
+}

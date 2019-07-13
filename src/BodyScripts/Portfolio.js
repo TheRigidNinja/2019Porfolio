@@ -3,9 +3,9 @@ import LogoB from "../IMG/LogoB.svg";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Project from "./Project";
 import About from "./About";
-import FeedBack from "./FeedbackSection/Feedback";
+import { connect } from "react-redux";
 
-export default class Portfolio extends Component {
+class Portfolio extends Component {
   state = {
     filterStyle: {
       display: "block"
@@ -19,11 +19,31 @@ export default class Portfolio extends Component {
     filterTagStyle: {
       display: "none"
     },
-    activeFilter: null
+    activeFilter: null,
+    searchArray: [],
+    objArray: {},
+    searchData: false,
+    filteredElm: [],
+    searchTerms: "",
+    objKeys: []
   };
 
   componentDidMount() {
     this.handleMenu();
+
+    window.addEventListener("click", event => {
+      let elm = event.target;
+
+      if (
+        !(
+          elm.id === "SearchInput" ||
+          elm.id === "fa-search" ||
+          /data/g.test(elm.id)
+        )
+      ) {
+        this.handlesFilterDropDown("WindowClick");
+      }
+    });
 
     // Handles drag scroll on filter tags
     const slider = document.querySelector(".filters");
@@ -51,6 +71,7 @@ export default class Portfolio extends Component {
   // Toggles search filters
   handleMenu = event => {
     var windowPath = window.location.pathname.replace("/", "");
+    windowPath = windowPath === "" ? "Project" : windowPath;
 
     if (["Project", "Contact", "About"].includes(windowPath)) {
       var filterDisp = "none",
@@ -59,7 +80,6 @@ export default class Portfolio extends Component {
       if (windowPath === "Contact") {
         this.handleContactPage();
       }
-
       if (windowPath === "Project") {
         filterDisp = "block";
         searchStyle = "100%";
@@ -90,29 +110,6 @@ export default class Portfolio extends Component {
     }
   };
 
-  // Handles Search Filter
-  handleSearchFilter = e => {
-    var htmlInfo = e !== "Remove" ? e.target.innerHTML : "",
-      style = e !== "Remove" ? "flex" : "none",
-      activeFilter = e.target;
-
-    if (!/</g.test(htmlInfo) || e === "Remove") {
-      if (e !== "Remove") {
-        activeFilter.setAttribute("class", "activeFilter");
-      }
-
-      if (this.state.activeFilter) {
-        this.state.activeFilter.removeAttribute("class", "activeFilter");
-      }
-
-      this.setState({
-        searchFilter: htmlInfo,
-        filterTagStyle: { display: style },
-        activeFilter: activeFilter
-      });
-    }
-  };
-
   // Handles navigates to contact section whenever pressing on contact button
   handleContactPage = () => {
     var elm = document.querySelector("#root"),
@@ -129,44 +126,248 @@ export default class Portfolio extends Component {
     }, 2000);
   };
 
+  // --------// Search filters
+  //  Handles Tags search filter
+  handleSearchFilter = (tagType, event) => {
+    if (typeof tagType === "object") {
+      tagType.preventDefault();
+    }
+
+    if (!["Searching", "Filter"].includes(tagType)) {
+      var htmlInfo = tagType !== "Remove" ? event.target.innerHTML : "",
+        style = tagType !== "Remove" ? "flex" : "none",
+        activeFilter = event ? event.target : "";
+
+      if (!/</g.test(htmlInfo) || tagType === "Remove") {
+        if (tagType !== "Remove") {
+          activeFilter.classList.add("activeFilter");
+        }
+
+        if (this.state.activeFilter) {
+          this.state.activeFilter.classList.remove("activeFilter");
+        }
+
+        this.setState(
+          {
+            searchFilter: htmlInfo,
+            filterTagStyle: { display: style },
+            activeFilter: activeFilter
+          },
+          () => this.handleFilterToProps(tagType)
+        );
+      }
+    } else {
+      this.handleFilterToProps(tagType);
+    }
+  };
+
+  // Sending Search Terms to props so ProjectRenderer can filter projects
+  handleFilterToProps = type => {
+    if (this.state.searchData === true) {
+      var filteredElm = [],
+        searchTerms = "",
+        tempSearchTerms = "",
+        tempFilteredElm = [];
+
+      if (type !== "Remove") {
+        let searchElm = document.querySelector("#SearchInput").value;
+        searchTerms =
+          type === "FilterTag"
+            ? this.state.searchFilter.toLocaleLowerCase()
+            : searchElm.toLocaleLowerCase();
+        type = type === "FilterTag" ? "Filter" : type;
+        tempSearchTerms = searchTerms;
+
+        // && type !== "Filter"
+        if (searchTerms.length >= 2 && type !== "Clear") {
+          // filters words
+          filteredElm = this.state.searchArray.filter(data =>
+            data.toLocaleLowerCase().includes(searchTerms.toLocaleLowerCase())
+          );
+        } else {
+          searchTerms = "";
+        }
+
+        tempFilteredElm = filteredElm;
+
+        this.setState(
+          {
+            filteredElm: type === "Filter" ? "" : filteredElm,
+            searchTerms: type === "Filter" ? "" : searchTerms
+          },
+          () => {
+            // console.log(searchTerms);
+            if (type === "Filter") {
+              let arrayCheck = this.state.objArray[tempSearchTerms],
+                keysData = arrayCheck ? [tempSearchTerms] : tempFilteredElm,
+                tempobjKeys = this.state.objKeys,
+                finaleInput = [];
+
+              // Filtering matching keys words from the array
+              if (keysData.length > 0) {
+                keysData.forEach(key => {
+                  this.state.objArray[key].forEach(val => {
+                    finaleInput[val] = "";
+                  });
+                });
+
+                // console.log(finaleInput);
+                // ordering the searched key words first and anything else after it
+                finaleInput = Object.keys(finaleInput);
+                tempobjKeys = tempobjKeys.filter(
+                  data => !finaleInput.includes(data)
+                );
+
+                // Merging all key words together in the new order
+                this.props.SearchPerimeters({
+                  [type]: [...finaleInput, ...tempobjKeys],
+                  "Ordered":finaleInput
+                });
+              }
+            }
+          }
+        );
+      }
+    } else {
+      this.turnObjToArray(type);
+    }
+  };
+
+  // Gets ready the data for the search mechanism
+  turnObjToArray = type => {
+    var projectObj = this.props.ObjectSearch,
+      objKeys = projectObj ? Object.keys(projectObj) : [],
+      searchArray = [],
+      objArray = {};
+    // console.log(projectObj)
+
+    // Turn obj into 1 array per each objKeys
+    objKeys.forEach(obj => {
+      let tempObj = [
+        projectObj[obj].Details.Description,
+        projectObj[obj].Details.Header,
+        ...projectObj[obj].Tech
+      ];
+
+      // Turn values on the above obj to keys and there keys to values
+      tempObj.forEach(val => {
+        val = val.toLocaleLowerCase();
+        let objValue = objArray[val] ? objArray[val] : [];
+        objArray[val] = [...objValue, obj];
+      });
+    });
+
+    searchArray = Object.keys(objArray);
+
+    this.setState(
+      {
+        searchArray: searchArray,
+        objArray: objArray,
+        objKeys: objKeys,
+        searchData: true
+      },
+      () => this.handleFilterToProps(type)
+    );
+
+    return true;
+  };
+
+  // Handles Drop down suggestions
+  handlesFilterDropDown = event => {
+    if (event !== "WindowClick") {
+      let htmlValue = event.target.innerText;
+
+      if (!"Nothing like that! 😔".includes(htmlValue)) {
+        document.querySelector("#SearchInput").value = htmlValue;
+        this.handleSearchFilter("Filter");
+      }
+    } else {
+      this.handleFilterToProps("Clear");
+    }
+  };
+
   render() {
+    const SearchResults = () => {
+      let filteredElm = this.state.filteredElm;
+
+      if (filteredElm.length > 0) {
+        return filteredElm.map(data => <li key={Math.random()}>{data}</li>);
+      } else if (this.state.searchTerms.length > 0) {
+        return <li id="notFound">Nothing like that! <span role="img" aria-label="">😔</span></li>;
+      } else {
+        return <></>;
+      }
+    };
+
     return (
       <BrowserRouter>
         <nav>
-          <img src={LogoB} />
-          <div className="searchFilter">
-            <div className="Search" style={this.state.searchStyle}>
-              <input type="search" placeholder="Search" />
-              <i className="fas fa-search" />
-              <span
-                id="filterTag"
-                style={this.state.filterTagStyle}
-                onClick={() => this.handleSearchFilter("Remove")}
+          <img src={LogoB} alt="Logo" />
+
+          <div className="searchFilterCont">
+            <div className="searchFilter">
+              <div className="Search" style={this.state.searchStyle}>
+                <form
+                  onSubmit={event => {
+                    this.handleSearchFilter("Filter");
+                    event.preventDefault();
+                  }}
+                >
+                  <input
+                    type="search"
+                    autoComplete="off"
+                    placeholder="Search"
+                    id="SearchInput"
+                    onInput={() => this.handleSearchFilter("Searching")}
+                  />
+                  <button id="fa-search">
+                    <i className="fas fa-search" id="fa-search" />
+                  </button>
+                </form>
+                <span
+                  id="filterTag"
+                  style={this.state.filterTagStyle}
+                  onClick={() => this.handleSearchFilter("Remove")}
+                >
+                  <span>{this.state.searchFilter}</span>
+                </span>
+              </div>
+              <div
+                className="Pages"
+                onClick={this.handleMenu}
+                style={this.state.pagesStyle}
               >
-                <span>{this.state.searchFilter}</span>
-              </span>
+                <Link to="/Project" id="Project">
+                  Projects
+                </Link>
+                <Link to="/About" id="About">
+                  About
+                </Link>
+                <Link
+                  to="/Contact"
+                  id="Contact"
+                  onClick={this.handleContactPage}
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-            <div
-              className="Pages"
-              onClick={this.handleMenu}
-              style={this.state.pagesStyle}
+
+            {/* Show search results */}
+            <ul
+              className="searchResults"
+              onClick={event => {
+                this.handlesFilterDropDown(event);
+              }}
             >
-              <Link to="/Project" id="Project">
-                Project
-              </Link>
-              <Link to="/About" id="About">
-                About
-              </Link>
-              <Link to="/Contact" id="Contact" onClick={this.handleContactPage}>
-                Contact
-              </Link>
-            </div>
+              <SearchResults />
+            </ul>
           </div>
 
           <div
             className="filters"
             style={this.state.filterStyle}
-            onClick={event => this.handleSearchFilter(event)}
+            onClick={event => this.handleSearchFilter("FilterTag", event)}
           >
             <span id="data1">Games</span>
             <span id="data2">Websites</span>
@@ -178,19 +379,33 @@ export default class Portfolio extends Component {
             <span id="data8">JavaScript/jQuery</span>
             <span id="data9">Python</span>
             <span id="data10">Firebase</span>
-            <span id="data11">Simulations</span>
+            <span id="data11">Simulation</span>
           </div>
         </nav>
-
         <Switch>
           <Route path="/Project" component={Project} />
           <Route path="/About" component={About} />
           <Route path="/Contact" component={About} />
           <Route path="" component={Project} />
         </Switch>
-
-        {/* Feed back */}
       </BrowserRouter>
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    SearchPerimeters: data => {
+      dispatch({ type: "SEARCHPERIMETERS", data: data });
+    }
+  };
+};
+
+const mapStateToProps = state => {
+  return {
+    ObjectSearch: state.ObjectSearch
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Portfolio);

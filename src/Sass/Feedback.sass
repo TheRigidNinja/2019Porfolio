@@ -38,7 +38,7 @@ $activeColor: rgb(51, 154, 240)
     @extend %flexbox
     justify-content: flex-start
     padding: 20px 10px
-    padding-top: 30px
+    padding-top: 50px
     padding-bottom: 50px
     
 .innerContainer
@@ -138,3 +138,18 @@ $activeColor: rgb(51, 154, 240)
 
 .peopleCommentBox
     margin-top: 50px
+
+
+.fa-times
+    position: absolute
+    padding: 5px 8px
+    border-radius: 50%
+    font-size: 20px
+    cursor: pointer
+    background: $generolColor
+    color: white
+    left: calc(100% - 60px)
+    top: 15px
+
+    &:hover
+        color: rgb(240, 62, 62)
