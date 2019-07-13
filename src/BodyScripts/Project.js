@@ -56,10 +56,13 @@ export default class Project extends Component {
   // HANDLES FeedBack
   FeedBack = elm => {
     var feedback = document.querySelector(".FeedBackClass"),
-      root = document.querySelector("#root");
+      root = document.querySelector("#root"),
+      close = document.querySelector(".fa-times");
 
     if (elm !== "Remove") {
       feedback.classList.add("feedBackSection");
+      close.style.display = "block";
+
       root.classList.add("feedBACK");
       this.setState({
         feedID: elm
@@ -67,6 +70,7 @@ export default class Project extends Component {
     } else {
       feedback.classList.remove("feedBackSection");
       root.classList.remove("feedBACK");
+      close.style.display="none";
       this.setState({
         feedID: "generalFeed"
       });

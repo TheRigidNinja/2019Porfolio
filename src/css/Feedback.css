@@ -186,6 +186,7 @@
   color: white;
   left: calc(100% - 60px);
   top: 15px;
+  display: none;
 }
 
 .fa-times:hover {

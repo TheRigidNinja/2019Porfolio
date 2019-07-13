@@ -383,7 +383,7 @@ class Portfolio extends Component {
           </div>
         </nav>
         <Switch>
-          <Route path="/Project" component={Project} />
+          <Route path="/Projects" component={Project} />
           <Route path="/About" component={About} />
           <Route path="/Contact" component={About} />
           <Route path="" component={Project} />
