@@ -23,17 +23,42 @@ export default function About() {
         <span>About me</span>
         <section>
           <p>
-            Self-driven passionate front-end developer with 2+ years in HTML5,
-            CSS3, JavaScript, jQuery and 1-year experience in React-Redux,
-            Node.js, Boostrap4, ExpressJS, Sass, Unit testing. *Knowledge on PHP
-            and MySQL. I have a strong sense of aesthetics and user interaction
+            My name is Brian Shisanya; I am a self-taught developer based in
+            Northland Melbourne. For a hobby, I have been developing for a
+            little bit over 2 years, and as a result I have experience in HTML5,
+            CSS3, JavaScript, jQuery and about 1 year experience in React-Redux,
+            Node.js, Bootstrap 4, Sass and Unit testing with Mocha, Chai, Enzyme
+            and Jest for React and Nodejs.
+            <br />
+            <br />
+            I like to describe myself as a developer who is addicted to coding,
+            and as well as has a strong sense of aesthetics and user
+            interaction. <br />
+            <br />
+            Currently, I’m looking for a position as a Front End Developer. In
+            my spare time, I like to learn and improve my design skills by
+            watching a Youtuber with a channel called{" "}
+            <a
+              href="https://www.youtube.com/user/DesignCourse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DesignCourse
+            </a>
+            . Equally (because I like robotics and entrepreneurship) I love
+            keeping up with the latest news about robotics and learning about
+            business and how to start a Tech-startup. I also like going to
+            developer meetups and conferences around central Melbourne.
+            <br />
+            <a
+              href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="more"
+            >
+              More detail...
+            </a>
           </p>
-          <a
-            href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
-            className="more"
-          >
-            More detail...
-          </a>
         </section>
       </div>
 

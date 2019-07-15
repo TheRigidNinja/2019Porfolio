@@ -31,6 +31,7 @@ class ProjectRenderer extends Component {
           "React/Redux",
           "MySQL"
         ],
+        Keywords: ["web app","HTML/CSS/SASS","Message","Networking","API","NodeAPI","Server Communication","JavaScript"],
         Details: {
           Header: "Chatome",
           Launch: "https://chatapp-66db3.firebaseapp.com",
@@ -49,6 +50,7 @@ class ProjectRenderer extends Component {
           "Material Ui",
           "Firebase-FireStore"
         ],
+        Keywords: ["web app","Networking","API"],
         Details: {
           Header: "TODO'S",
           Launch: "https://therigidninja.firebaseapp.com/",
@@ -60,6 +62,7 @@ class ProjectRenderer extends Component {
       },
       project3: {
         Tech: ["Sass (Flexbox)", "jQuery", "HTML"],
+        Keywords: ["Website","HTML/CSS/SASS","GithubHosting","modern"],
         Details: {
           Header: "App Landing Page - Site",
           Launch: "https://therigidninja.github.io/App-landing-page/",
@@ -71,6 +74,7 @@ class ProjectRenderer extends Component {
       },
       project4: {
         Tech: ["CSS", "JavaScript", "HTML"],
+        Keywords: ["Game","Snake","Box Grid"],
         Details: {
           Header: "Slither Classic",
           Launch:
@@ -83,6 +87,7 @@ class ProjectRenderer extends Component {
       },
       project5: {
         Tech: ["React/Redux", "HTML", "CSS"],
+        Keywords: ["Website"],
         Details: {
           Header: "Old Portfolio2 - Site",
           Launch: "https://reactportfolio-e3bad.firebaseapp.com/",
@@ -92,7 +97,8 @@ class ProjectRenderer extends Component {
         }
       },
       project6: {
-        Tech: ["CSS (Flexbox)", "jQuery", "HTML"],
+        Tech: ["CSS (Flexbox)", "jQuery","HTML"],
+        Keywords: ["Website"],
         Details: {
           Header: "Pizza - Site",
           Launch: "https://therigidninja.github.io/PizzaWebsite/",
@@ -104,6 +110,7 @@ class ProjectRenderer extends Component {
       },
       project7: {
         Tech: ["CSS", "JavaScript", "HTML"],
+        Keywords: ["Game","Shooting","enemies"],
         Details: {
           Header: "Defender",
           Launch:
@@ -114,7 +121,8 @@ class ProjectRenderer extends Component {
         }
       },
       project8: {
-        Tech: ["Firebase - DB", "HTML (SVG)", "CSS", "jQuery", "Boostrap 4"],
+        Tech: ["Firebase - DB", "HTML (SVG)","CSS", "jQuery", "Boostrap 4"],
+        Keywords: ["Website"],
         Details: {
           Header: "Old Portfolio - Site",
           Launch:
@@ -132,6 +140,7 @@ class ProjectRenderer extends Component {
           "Excel (VBA)",
           "Firebase-Realtime - DB"
         ],
+        Keywords: ["web app"],
         Details: {
           Header: "Inventory System",
           Launch:
@@ -144,6 +153,7 @@ class ProjectRenderer extends Component {
       },
       project10: {
         Tech: ["Python", "C# (Bunifu ui)"],
+        Keywords: ["Trading","Desktop App"],
         Details: {
           Header: "Auto Trade",
           Launch: "https://github.com/TheRigidNinja/CSharp-AutoTrader",
@@ -154,7 +164,8 @@ class ProjectRenderer extends Component {
         }
       },
       project11: {
-        Tech: ["React/Redux", "HTML", "CSS (Flexbox)"],
+        Tech: ["React/Redux", "HTML", "CSS (Flexbox)","Website"],
+        Keywords: ["Website"],
         Details: {
           Header: "This Portfolio - Site",
           Launch: "##",
@@ -164,7 +175,8 @@ class ProjectRenderer extends Component {
         }
       },
       project12: {
-        Tech: ["JavaScript", "HTML", "CSS"],
+        Tech: ["JavaScript", "HTML","CSS"],
+        Keywords: ["Website","Challenge"],
         Details: {
           Header: "Memory Game",
           Launch:
@@ -176,6 +188,7 @@ class ProjectRenderer extends Component {
       },
       project13: {
         Tech: ["JavaScript", "HTML", "CSS"],
+        Keywords: ["Website","Simulation"],
         Details: {
           Header: "V2 Rocket - Site",
           Launch:
@@ -189,6 +202,7 @@ class ProjectRenderer extends Component {
       },
       project14: {
         Tech: ["JavaScript", "HTML", "CSS"],
+        Keywords: ["Simulation","Shooting"],
         Details: {
           Header: "Tanky",
           Launch:
@@ -200,6 +214,7 @@ class ProjectRenderer extends Component {
       },
       project15: {
         Tech: ["Python", "C#"],
+        Keywords: ["Desktop App"],
         Details: {
           Header: "Gmail Unsubscriber",
           Launch: "https://github.com/TheRigidNinja/Unsubscriber",

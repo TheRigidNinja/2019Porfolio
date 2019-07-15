@@ -221,7 +221,7 @@ class Portfolio extends Component {
                 // Merging all key words together in the new order
                 this.props.SearchPerimeters({
                   [type]: [...finaleInput, ...tempobjKeys],
-                  "Ordered":finaleInput
+                  Ordered: finaleInput
                 });
               }
             }
@@ -246,6 +246,7 @@ class Portfolio extends Component {
       let tempObj = [
         projectObj[obj].Details.Description,
         projectObj[obj].Details.Header,
+        ...projectObj[obj].Keywords,
         ...projectObj[obj].Tech
       ];
 
@@ -293,7 +294,14 @@ class Portfolio extends Component {
       if (filteredElm.length > 0) {
         return filteredElm.map(data => <li key={Math.random()}>{data}</li>);
       } else if (this.state.searchTerms.length > 0) {
-        return <li id="notFound">Nothing like that! <span role="img" aria-label="">😔</span></li>;
+        return (
+          <li id="notFound">
+            Nothing like that!{" "}
+            <span role="img" aria-label="">
+              😔
+            </span>
+          </li>
+        );
       } else {
         return <></>;
       }
@@ -369,14 +377,15 @@ class Portfolio extends Component {
             style={this.state.filterStyle}
             onClick={event => this.handleSearchFilter("FilterTag", event)}
           >
-            <span id="data1">Games</span>
-            <span id="data2">Websites</span>
+            <span id="data1">Game</span>
+            <span id="data2">Website</span>
             <span id="data3">MySql</span>
             <span id="data4">HTML/CSS/SASS</span>
             <span id="data5">Node.js</span>
-            <span id="data6">Web Apps</span>
+            <span id="data6">Web App</span>
             <span id="data7">React/Redux</span>
-            <span id="data8">JavaScript/jQuery</span>
+            <span id="data8">JavaScript</span>
+            <span id="data8">jQuery</span>
             <span id="data9">Python</span>
             <span id="data10">Firebase</span>
             <span id="data11">Simulation</span>
