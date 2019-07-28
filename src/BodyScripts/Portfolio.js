@@ -45,6 +45,10 @@ class Portfolio extends Component {
       }
     });
 
+    // filter tag resizer
+    this.handleResize();
+    window.addEventListener("resize", () => this.handleResize());
+
     // Handles drag scroll on filter tags
     const slider = document.querySelector(".filters");
     let isDown = false;
@@ -67,6 +71,23 @@ class Portfolio extends Component {
       slider.scrollLeft = scrollLeft - walk;
     });
   }
+
+  // Handle Resize OF Filter Name tags
+  handleResize = () => {
+    let winWidth = window.innerWidth,
+      filterWidth = "400px";
+
+    if (winWidth < 840) {
+      filterWidth = "400px";
+    } else if (winWidth >= 840 && winWidth < 1170) {
+      filterWidth = "820px";
+    } else {
+      filterWidth = "1220px";
+    }
+
+    console.log(filterWidth);
+    document.querySelector(".filters").style.width = filterWidth;
+  };
 
   // Toggles search filters
   handleMenu = event => {

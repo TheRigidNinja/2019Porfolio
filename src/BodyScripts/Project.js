@@ -70,7 +70,7 @@ export default class Project extends Component {
     } else {
       feedback.classList.remove("feedBackSection");
       root.classList.remove("feedBACK");
-      close.style.display="none";
+      close.style.display = "none";
       this.setState({
         feedID: "generalFeed"
       });
