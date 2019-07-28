@@ -24,11 +24,11 @@ export default function About() {
         <section>
           <p>
             My name is Brian Shisanya; I am a self-taught developer based in
-            Northland Melbourne. For a hobby, I have been developing for a
-            little bit over 2 years, and as a result I have experience in HTML5,
-            CSS3, JavaScript, jQuery and about 1 year experience in React-Redux,
-            Node.js, Bootstrap 4, Sass and Unit testing with Mocha, Chai, Enzyme
-            and Jest for React and Nodejs.
+            Hobart. For a hobby, I have been developing for a little bit over 2
+            years, and as a result I have experience in HTML5, CSS3, JavaScript,
+            jQuery and about 1 year experience in React-Redux, Node.js,
+            Bootstrap 4, Sass and Unit testing with Mocha, Chai, Enzyme and Jest
+            for React and Nodejs.
             <br />
             <br />
             I like to describe myself as a developer who is addicted to coding,
