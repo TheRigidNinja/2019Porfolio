@@ -79,13 +79,12 @@ class Portfolio extends Component {
 
     if (winWidth < 840) {
       filterWidth = "400px";
-    } else if (winWidth >= 840 && winWidth < 1170) {
+    } else if (winWidth >= 840 && winWidth < 1260) {
       filterWidth = "820px";
     } else {
       filterWidth = "1220px";
     }
 
-    console.log(filterWidth);
     document.querySelector(".filters").style.width = filterWidth;
   };
 
