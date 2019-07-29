@@ -45,10 +45,9 @@ export default function About() {
             >
               DesignCourse
             </a>
-            . Equally (because I like robotics and entrepreneurship) I love
-            keeping up with the latest news about robotics and learning about
-            business and how to start a Tech-startup. I also like going to
-            developer meetups and conferences around central Melbourne.
+            . Equally I love keeping up with the latest news about robotics and
+            learning especially about tech businesses. I also like to
+            participate in Onlin.
             <br />
             <a
               href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
