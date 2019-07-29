@@ -70,15 +70,6 @@ class Portfolio extends Component {
       const walk = x - startX; //scroll-fast
       slider.scrollLeft = scrollLeft - walk;
     });
-
-    // Solving Includes issue with Explorer
-    if (!String.prototype.includes) {
-      //To check browser supports or not
-      String.prototype.includes = function(str) {
-        //If not supported, then define the method
-        return this.indexOf(str) !== -1;
-      };
-    }
   }
 
   // Handle Resize OF Filter Name tags
