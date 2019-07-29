@@ -46,8 +46,7 @@ export default function About() {
               DesignCourse
             </a>
             . Equally I love keeping up with the latest news about robotics and
-            learning especially about tech businesses. I also like to
-            participate in Onlin.
+            learning especially about tech businesses.
             <br />
             <a
               href="https://www.linkedin.com/in/brian-shisanya-7a5a6516a/"
